@@ -35,9 +35,9 @@ abstract class BasicGenerator extends CodegenConfig with PathUtil {
   def destinationDir = "generated-code/src/main/scala"
   def fileSuffix = ".scala"
 
-  override def invokerPackage: Option[String] = Some("com.wordnik.client.common")
-  override def modelPackage: Option[String] = Some("com.wordnik.client.model")
-  override def apiPackage: Option[String] = Some("com.wordnik.client.api")
+  override def invokerPackage: Option[String] = Some(packageName + ".common")
+  override def modelPackage: Option[String] = Some(packageName + ".model")
+  override def apiPackage: Option[String] = Some(packageName + ".api")
 
   var codegen = new Codegen(this)
   def json = ScalaJsonUtil.getJsonMapper

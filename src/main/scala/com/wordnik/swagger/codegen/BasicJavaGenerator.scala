@@ -79,12 +79,6 @@ class BasicJavaGenerator extends BasicGenerator {
     "ArrayList" -> "java.util.*",
     "List" -> "java.util.List")
 
-  // package for models
-  override def modelPackage = Some("com.wordnik.client.model")
-
-  // package for api classes
-  override def apiPackage = Some("com.wordnik.client.api")
-
   // file suffix
   override def fileSuffix = ".java"
 
