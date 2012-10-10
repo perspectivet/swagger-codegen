@@ -77,7 +77,7 @@ class BasicJavaGenerator extends BasicGenerator {
     "Date" -> "java.util.Date",
     "Array" -> "java.util.*",
     "ArrayList" -> "java.util.*",
-    "List" -> "java.util.List")
+    "List" -> "java.util.*")
 
   // file suffix
   override def fileSuffix = ".java"
