@@ -122,45 +122,40 @@ object CoreUtils {
     val requiredModels = modelObjects.filter(obj => baseNames.contains(obj._1))
 
     val subNames = new HashSet[String]
-    // look inside top-level models
-    requiredModels.map(model => {
-      model._2.properties.foreach(prop => {
+        
+    def extractSubNames(model: Model): Unit = {
+      model.properties.foreach(prop => {
         val subObject = prop._2
         if (containers.contains(subObject.`type`)) {
           subObject.items match {
             case Some(subItem) => {
-              if (subItem.ref != null) {
+              if (subItem.ref != null && !primitives.contains(subItem.ref)) {
                 subNames += subItem.ref
+                modelObjects.get(subItem.ref) match {
+                  case Some(subModel) => if (!subNames.contains(subModel.id)) extractSubNames(subModel)
+                  case _ =>
+                }
               } else {
                 subNames += subItem.`type`
               }
             }
             case _ =>
           }
-        } else subNames += subObject.`type`
+        } else if(!primitives.contains(subObject.`type`)) {
+          subNames += subObject.`type`
+          modelObjects.get(subObject.`type`) match {
+            case Some(subModel) => if (!subNames.contains(subModel.id)) extractSubNames(subModel)
+            case _ =>
+          }
+        }
       })
-    })
+    }
     
-    // look inside submodels
-    modelObjects.filter(obj => subNames.contains(obj._1)).foreach(model => {
-      model._2.properties.foreach(prop => {
-        val subObject = prop._2
-        if (containers.contains(subObject.`type`)) {
-          subObject.items match {
-            case Some(subItem) => {
-              if (subItem.ref != null) {
-                subNames += subItem.ref
-              } else {
-                subNames += subItem.`type`
-              }
-            }
-            case _ =>
-          }
-        } else subNames += subObject.`type`
-      })
-    })
+    // look inside top-level models
+    modelObjects.map(model => extractSubNames(model._2))
+    
     val subModels = modelObjects.filter(obj => subNames.contains(obj._1))
     val allModels = requiredModels ++ subModels
-    allModels.filter(m => primitives.contains(m._1) == false).toMap
+    allModels.toMap
   }
 }
