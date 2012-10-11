@@ -163,7 +163,10 @@ class Codegen(config: CodegenConfig) {
       "imports" -> imports,
       "operations" -> f,
       "models" -> modelData,
-      "basePath" -> bundle.getOrElse("basePath", ""))
+      "basePath" -> (bundle.get("basePath") match {
+        case Some(value: String) => if(value.startsWith("http")) value else "https://" + value
+        case _ => ""
+      }))
     var output = engine.layout(config.templateDir + File.separator + templateFile, template, data.toMap)
 
     //  a shutdown method will be added to scalate in an upcoming release
