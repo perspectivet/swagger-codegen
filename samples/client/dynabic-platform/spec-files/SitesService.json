@@ -1,0 +1,243 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/sites",
+  "apis": [
+    {
+      "path": "/sites/{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetSites",
+          "summary": "GetSites",
+          "responseClass": "List[SiteResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page Number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page Size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/{siteId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSiteById",
+          "summary": "GetSiteById",
+          "responseClass": "SiteResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteId",
+              "description": "site Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/subdomain/{siteSubdomain}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSiteBySubdomain",
+          "summary": "GetSiteBySubdomain",
+          "responseClass": "SiteResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/name/{siteName}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSitesByName",
+          "summary": "GetSitesByName",
+          "responseClass": "List[SiteResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteName",
+              "description": "site Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/{format}",
+      "operations": [
+        {
+          "nickname": "AddSite",
+          "summary": "AddSite",
+          "responseClass": "SiteResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "newSite",
+              "description": "new Site",
+              "dataType": "SiteRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/{siteId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateSite",
+          "summary": "UpdateSite",
+          "responseClass": "SiteResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "updatedSite",
+              "description": "updated Site",
+              "dataType": "SiteRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "siteId",
+              "description": "site Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/sites/{siteId}",
+      "operations": [
+        {
+          "nickname": "DeleteSite",
+          "summary": "DeleteSite",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "siteId",
+              "description": "site Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SiteResponse": {
+      "id": "SiteResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "revenue": {
+          "type": "double"
+        },
+        "company_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "subdomain": {
+          "type": "string"
+        },
+        "is_test_mode": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SiteRequest": {
+      "id": "SiteRequest",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "subdomain": {
+          "type": "string"
+        },
+        "is_test_mode": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

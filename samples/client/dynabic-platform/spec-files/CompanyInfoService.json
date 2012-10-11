@@ -1,0 +1,111 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1-SHAPSHOT.121026",
+  "apiVersion": "0.1",
+  "apis": [
+    {
+      "path": "/companyinfo/{format}",
+      "operations": [
+        {
+          "nickname": "GetCompanyInfo",
+          "summary": "GetCompanyInfo",
+          "responseClass": "CompanyInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/companyinfo/{format}",
+      "operations": [
+        {
+          "nickname": "UpdateCompanyInfo",
+          "summary": "UpdateCompanyInfo",
+          "responseClass": "CompanyInfoResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "updatedCompanyInfo",
+              "description": "updated Company Info",
+              "dataType": "CompanyInfoRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "CompanyInfoResponse": {
+      "id": "CompanyInfoResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "CompanyInfoRequest": {
+      "id": "CompanyInfoRequest",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

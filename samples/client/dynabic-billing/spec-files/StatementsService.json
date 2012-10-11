@@ -1,0 +1,127 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/statements",
+  "apis": [
+    {
+      "path": "/statements/subscription/{subscriptionId}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetStatementsForSubscription",
+          "summary": "GetStatementsForSubscription",
+          "responseClass": "List[Statement]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Statement": {
+      "id": "Statement",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "subscription_id": {
+          "type": "int"
+        },
+        "customer_first_name": {
+          "type": "string"
+        },
+        "customer_last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "statement_date": {
+          "type": "Date"
+        },
+        "billing_start_date": {
+          "type": "Date"
+        },
+        "billing_end_date": {
+          "type": "Date"
+        },
+        "starting_balance": {
+          "type": "double"
+        },
+        "current_charges": {
+          "type": "double"
+        },
+        "payments_and_credits": {
+          "type": "double"
+        },
+        "status": {
+          "type": "string"
+        },
+        "billing_address_id": {
+          "type": "int"
+        },
+        "statement_details": {
+          "items":{
+            "$ref":"StatementDetail"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "StatementDetail": {
+      "id": "StatementDetail",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "statement_id": {
+          "type": "int"
+        },
+        "date": {
+          "type": "Date"
+        },
+        "type": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "double"
+        },
+        "currency_id": {
+          "type": "int"
+        }
+      }
+    }
+  }
+}

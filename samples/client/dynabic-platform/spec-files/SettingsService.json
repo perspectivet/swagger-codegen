@@ -1,0 +1,306 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/settings",
+  "apis": [
+    {
+      "path": "/settings/{siteSubdomain}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSettings",
+          "summary": "GetSettings",
+          "responseClass": "List[SettingResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/{siteSubdomain}/{settingId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSettingById",
+          "summary": "GetSettingById",
+          "responseClass": "SettingResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingId",
+              "description": "setting Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/{siteSubdomain}/name={settingName}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSettingByName",
+          "summary": "GetSettingByName",
+          "responseClass": "SettingResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingName",
+              "description": "setting Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/{siteSubdomain}/{settingId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateSetting",
+          "summary": "UpdateSetting",
+          "responseClass": "SettingResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingId",
+              "description": "setting Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingRequest",
+              "description": "setting Request",
+              "dataType": "SettingRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/{siteSubdomain}/id={settingId}/name={settingName}/value={settingValue}/description={settingDescription}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateSettingWithExplicitParameters",
+          "summary": "UpdateSettingWithExplicitParameters",
+          "responseClass": "SettingResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingId",
+              "description": "setting Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingName",
+              "description": "setting Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingValue",
+              "description": "setting Value",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingDescription",
+              "description": "setting Description",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/{siteSubdomain}/id={settingId}/value={settingValue}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateSettingWithExplicitParameters2",
+          "summary": "UpdateSettingWithExplicitParameters2",
+          "responseClass": "SettingResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingId",
+              "description": "setting Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settingValue",
+              "description": "setting Value",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/settings/default/{settingName}.{format}",
+      "operations": [
+        {
+          "nickname": "GetDefaultSetting",
+          "summary": "GetDefaultSetting",
+          "responseClass": "SettingResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "settingName",
+              "description": "setting Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SettingResponse": {
+      "id": "SettingResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "site_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "SettingRequest": {
+      "id": "SettingRequest",
+      "properties": {
+        "site_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "basePath": "api.dynabic.com/platform/spec",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "apis": [
+    {
+      "path": "/ApplicationsService.{format}"
+    },
+    {
+      "path": "/CompanyInfoService.{format}"
+    },
+    {
+      "path": "/SitesService.{format}"
+    },
+    {
+      "path": "/DynabicMarketingPlansService.{format}"
+    },
+    {
+      "path": "/UsersService.{format}"
+    },
+    {
+      "path": "/EventsService.{format}"
+    },
+    {
+      "path": "/SettingsService.{format}"
+    }
+  ]
+}

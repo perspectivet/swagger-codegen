@@ -1,0 +1,508 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/users",
+  "apis": [
+    {
+      "path": "/users/{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetAllUsers",
+          "summary": "GetAllUsers",
+          "responseClass": "List[UserResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page Number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page Size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetUserById",
+          "summary": "GetUserById",
+          "responseClass": "UserResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/byname/[{userName}].{format}",
+      "operations": [
+        {
+          "nickname": "GetUserByUserName",
+          "summary": "GetUserByUserName",
+          "responseClass": "UserResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userName",
+              "description": "user Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/apikeys/{userId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetUserApiKeys",
+          "summary": "GetUserApiKeys",
+          "responseClass": "UserApiKeysResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{format}",
+      "operations": [
+        {
+          "nickname": "AddUser",
+          "summary": "AddUser",
+          "responseClass": "UserResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "newUser",
+              "description": "new User",
+              "dataType": "UserRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateUser",
+          "summary": "UpdateUser",
+          "responseClass": "UserResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "updatedUser",
+              "description": "updatedUser",
+              "dataType": "UserRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}",
+      "operations": [
+        {
+          "nickname": "DeleteUser",
+          "summary": "DeleteUser",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/delete-status/{status}",
+      "operations": [
+        {
+          "nickname": "SetDeletedStatus",
+          "summary": "SetDeletedStatus",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/active-status/{status}",
+      "operations": [
+        {
+          "nickname": "SetActiveStatus",
+          "summary": "SetActiveStatus",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/password",
+      "operations": [
+        {
+          "nickname": "ResetPassword",
+          "summary": "ResetPassword",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/new-pwd/{oldPassword}/{newPassword}",
+      "operations": [
+        {
+          "nickname": "ModifyPassword",
+          "summary": "ModifyPassword",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "oldPassword",
+              "description": "old Password",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newPassword",
+              "description": "new Password",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/set-roles?roles={roles}",
+      "operations": [
+        {
+          "nickname": "SetRoles",
+          "summary": "SetRoles",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "roles",
+              "description": "roles",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{userId}/disable-api-access",
+      "operations": [
+        {
+          "nickname": "DeleteApiKeys",
+          "summary": "DeleteApiKeys",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/enable-api-access/{userId}.{format}",
+      "operations": [
+        {
+          "nickname": "GenerateNewApiKeys",
+          "summary": "GenerateNewApiKeys",
+          "responseClass": "UserApiKeysResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "user Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "UserResponse": {
+      "id": "UserResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "registration_date": {
+          "type": "Date"
+        },
+        "public_key": {
+          "type": "string"
+        },
+        "private_key": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "is_subscribed_to_newsletter": {
+          "type": "boolean"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "facebook_id": {
+          "type": "string"
+        },
+        "googleapps_user_name": {
+          "type": "string"
+        },
+        "yahoo_user_name": {
+          "type": "string"
+        },
+        "user_roles": {
+          "type": "string"
+        }
+      }
+    },
+    "UserApiKeysResponse": {
+      "id": "UserApiKeysResponse",
+      "properties": {
+        "public_key": {
+          "type": "string"
+        },
+        "private_key": {
+          "type": "string"
+        }
+      }
+    },
+    "UserRequest": {
+      "id": "UserRequest",
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "is_subscribed_to_newsletter": {
+          "type": "boolean"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "facebook_id": {
+          "type": "string"
+        },
+        "googleapps_user_name": {
+          "type": "string"
+        },
+        "yahoo_user_name": {
+          "type": "string"
+        },
+        "user_roles": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

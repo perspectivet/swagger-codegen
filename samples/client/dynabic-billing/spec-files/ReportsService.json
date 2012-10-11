@@ -1,0 +1,537 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/reports",
+  "apis": [
+    {
+      "path": "/reports/ProductsSignupsEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetProductsSignupsEvolution",
+          "summary": "GetProductsSignupsEvolution",
+          "responseClass": "List[ProductsSignups]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/ProductsRevenuesEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetProductsRevenuesEvolution",
+          "summary": "GetProductsRevenuesEvolution",
+          "responseClass": "List[ProductsRevenues]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/TotalRevenueAmount/{siteSubdomain}/{format}",
+      "operations": [
+        {
+          "nickname": "GetTotalRevenueAmount",
+          "summary": "GetTotalRevenueAmount",
+          "responseClass": "List[RevenueAmount]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/ActiveSubscriptionsCount/{siteSubdomain}/{format}",
+      "operations": [
+        {
+          "nickname": "GetActiveSubscriptionsCount",
+          "summary": "GetActiveSubscriptionsCount",
+          "responseClass": "ActiveSubscriptionsCountResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/TotalSubscribersCount/{siteSubdomain}/{format}",
+      "operations": [
+        {
+          "nickname": "GetTotalSubscribersCount",
+          "summary": "GetTotalSubscribersCount",
+          "responseClass": "TotalSubscribersCountResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/TodayRevenueAmount/{siteSubdomain}/{format}",
+      "operations": [
+        {
+          "nickname": "GetTodayRevenueAmount",
+          "summary": "GetTodayRevenueAmount",
+          "responseClass": "List[RevenueAmount]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/TodayNewSubscribersCount/{siteSubdomain}/{format}",
+      "operations": [
+        {
+          "nickname": "GetTodayNewSubscribersCount",
+          "summary": "GetTodayNewSubscribersCount",
+          "responseClass": "TodayNewSubscribersCountResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/SignupsEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetSignupsEvolution",
+          "summary": "GetSignupsEvolution",
+          "responseClass": "List[ReportIntValueItem]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/RevenuesEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetRevenuesEvolution",
+          "summary": "GetRevenuesEvolution",
+          "responseClass": "List[ReportDecimalValueItem]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/CustomersEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetCustomersEvolution",
+          "summary": "GetCustomersEvolution",
+          "responseClass": "List[ReportIntValueItem]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/SubscriptionsEvolution/{siteSubdomain}/{startDate}/{format}?endDate={endDate}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionsEvolution",
+          "summary": "GetSubscriptionsEvolution",
+          "responseClass": "List[ReportIntValueItem]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "startDate",
+              "description": "start Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "endDate",
+              "description": "end Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/reports/SitesSummary/{format}",
+      "operations": [
+        {
+          "nickname": "GetSitesSummary",
+          "summary": "GetSitesSummary",
+          "responseClass": "List[SiteSummary]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "ProductsSignups": {
+      "id": "ProductsSignups",
+      "properties": {
+        "product_id": {
+          "type": "int"
+        },
+        "product": {
+          "type": "string"
+        },
+        "date": {
+          "type": "Date"
+        },
+        "signups": {
+          "type": "double"
+        }
+      }
+    },
+    "ProductsRevenues": {
+      "id": "ProductsRevenues",
+      "properties": {
+        "product_id": {
+          "type": "int"
+        },
+        "product": {
+          "type": "string"
+        },
+        "date": {
+          "type": "Date"
+        },
+        "revenues": {
+          "type": "double"
+        },
+        "currency_code": {
+          "type": "string"
+        }
+      }
+    },
+    "RevenueAmount": {
+      "id": "RevenueAmount",
+      "properties": {
+        "amount": {
+          "type": "double"
+        },
+        "currency_code": {
+          "type": "string"
+        }
+      }
+    },
+    "ActiveSubscriptionsCountResponse": {
+      "id": "ActiveSubscriptionsCountResponse",
+      "properties": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "TotalSubscribersCountResponse": {
+      "id": "TotalSubscribersCountResponse",
+      "properties": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "TodayNewSubscribersCountResponse": {
+      "id": "TodayNewSubscribersCountResponse",
+      "properties": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "ReportIntValueItem": {
+      "id": "ReportIntValueItem",
+      "properties": {
+        "date": {
+          "type": "Date"
+        },
+        "value": {
+          "type": "int"
+        }
+      }
+    },
+    "ReportDecimalValueItem": {
+      "id": "ReportDecimalValueItem",
+      "properties": {
+        "date": {
+          "type": "Date"
+        },
+        "value": {
+          "type": "double"
+        },
+        "currency_code": {
+          "type": "string"
+        }
+      }
+    },
+    "SiteSummary": {
+      "id": "SiteSummary",
+      "properties": {
+        "site_id": {
+          "type": "int"
+        },
+        "site_name": {
+          "type": "string"
+        },
+        "today_new_subscriptions": {
+          "type": "int"
+        },
+        "today_revenues": {
+          "items":{
+            "$ref":"RevenueAmount"
+          },
+          "type": "List"
+        },
+        "total_revenues": {
+          "items":{
+            "$ref":"RevenueAmount"
+          },
+          "type": "List"
+        },
+        "total_subscribers": {
+          "type": "int"
+        }
+      }
+    }
+  }
+}

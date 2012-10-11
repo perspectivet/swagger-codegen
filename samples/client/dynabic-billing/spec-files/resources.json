@@ -1,0 +1,34 @@
+{
+  "basePath": "api.dynabic.com/Billing/spec",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "apis": [
+    {
+      "path": "/TransactionsService.{format}"
+    },
+    {
+      "path": "/StatementsService.{format}"
+    },
+    {
+      "path": "/ProductsService.{format}"
+    },
+    {
+      "path": "/TestsService.{format}"
+    },
+    {
+      "path": "/ProductFamiliesService.{format}"
+    },
+    {
+      "path": "/SubscriptionsService.{format}"
+    },
+    {
+      "path": "/AddressesService.{format}"
+    },
+    {
+      "path": "/ReportsService.{format}"
+    },
+    {
+      "path": "/CustomersService.{format}"
+    }
+  ]
+}

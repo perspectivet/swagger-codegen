@@ -1,0 +1,724 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/products",
+  "apis": [
+    {
+      "path": "/products/bysite/{siteSubdomain}/{format}?isArchived={isArchived}&pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetProductsBySite",
+          "summary": "GetProductsBySite",
+          "responseClass": "List[ProductResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "isArchived",
+              "description": "is Archived",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/bysite/{siteSubdomain}/[{productFamilyName}]/{format}?isArchived={isArchived}",
+      "operations": [
+        {
+          "nickname": "GetProductsBySiteAndFamily",
+          "summary": "GetProductsBySiteAndFamily",
+          "responseClass": "List[ProductResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "productFamilyName",
+              "description": "product Family Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "isArchived",
+              "description": "is Archived",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/bysite/{siteSubdomain}/[{productName}].{format}",
+      "operations": [
+        {
+          "nickname": "GetProductsBySiteAndProductName",
+          "summary": "GetProductsBySiteAndProductName",
+          "responseClass": "List[ProductResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "productName",
+              "description": "product Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/byapiref/{siteId}/{apiRef}.{format}",
+      "operations": [
+        {
+          "nickname": "GetProductByApiRef",
+          "summary": "GetProductByApiRef",
+          "responseClass": "ProductResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteId",
+              "description": "site Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "apiRef",
+              "description": "api Ref",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/byfamily/{productFamilyId}/{format}?isArchived={isArchived}",
+      "operations": [
+        {
+          "nickname": "GetProductsByFamilyId",
+          "summary": "GetProductsByFamilyId",
+          "responseClass": "List[ProductResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "productFamilyId",
+              "description": "product Family Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "isArchived",
+              "description": "is Archived",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/byfamily/{productFamilyId}/[{productName}].{format}",
+      "operations": [
+        {
+          "nickname": "GetProductByFamilyIdAndProductName",
+          "summary": "GetProductByFamilyIdAndProductName",
+          "responseClass": "ProductResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "productFamilyId",
+              "description": "product Family Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "productName",
+              "description": "product Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/{productId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetProductById",
+          "summary": "GetProductById",
+          "responseClass": "ProductResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/{format}",
+      "operations": [
+        {
+          "nickname": "AddProduct",
+          "summary": "AddProduct",
+          "responseClass": "ProductResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "newProduct",
+              "description": "new Product",
+              "dataType": "ProductRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/{productId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateProduct",
+          "summary": "UpdateProduct",
+          "responseClass": "ProductResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "updatedProduct",
+              "description": "updated Product",
+              "dataType": "ProductRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/{productId}",
+      "operations": [
+        {
+          "nickname": "DeleteProduct",
+          "summary": "DeleteProduct",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/archive/{productId}",
+      "operations": [
+        {
+          "nickname": "ArchiveProduct",
+          "summary": "ArchiveProduct",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/products/activate/{productId}",
+      "operations": [
+        {
+          "nickname": "ActivateProduct",
+          "summary": "ActivateProduct",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "ProductResponse": {
+      "id": "ProductResponse",
+      "properties": {
+        "is_archived": {
+          "type": "boolean"
+        },
+        "pricing_plans": {
+          "items":{
+            "$ref":"PricingPlanResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_family_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_credit_card_at_signup_required": {
+          "type": "string"
+        },
+        "is_billing_address_at_signup_required": {
+          "type": "string"
+        },
+        "api_reference1": {
+          "type": "string"
+        },
+        "accounting_code": {
+          "type": "string"
+        }
+      }
+    },
+    "PricingPlanResponse": {
+      "id": "PricingPlanResponse",
+      "properties": {
+        "product_id": {
+          "type": "int"
+        },
+        "pricing_plan_payment_schedules": {
+          "items":{
+            "$ref":"ProductPricingPlanPaymentScheduleResponse"
+          },
+          "type": "List"
+        },
+        "product_items": {
+          "items":{
+            "$ref":"ProductItemResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "currency_code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "upfront_charge": {
+          "type": "double"
+        },
+        "trial_period_charge": {
+          "type": "double"
+        },
+        "trial_period_duration_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductPricingPlanPaymentScheduleResponse": {
+      "id": "ProductPricingPlanPaymentScheduleResponse",
+      "properties": {
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "frequency_type": {
+          "type": "string"
+        },
+        "frequency_interval": {
+          "type": "int"
+        },
+        "frequency_relative_interval": {
+          "type": "string"
+        },
+        "frequency_recurrence_factor": {
+          "type": "int"
+        },
+        "subscription_period_change": {
+          "type": "double"
+        },
+        "start_date_offset_days": {
+          "type": "int"
+        },
+        "end_date_offset_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductItemResponse": {
+      "id": "ProductItemResponse",
+      "properties": {
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "metered_prices": {
+          "items":{
+            "$ref":"ProductMeteredPriceResponse"
+          },
+          "type": "List"
+        },
+        "product_item_children": {
+         "items":{
+            "$ref":"ProductItemResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "charge_model": {
+          "type": "string"
+        },
+        "item_type": {
+          "type": "string"
+        },
+        "unit_name": {
+          "type": "string"
+        },
+        "is_visible_on_hosted_page": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ProductMeteredPriceResponse": {
+      "id": "ProductMeteredPriceResponse",
+      "properties": {
+        "product_item_id": {
+          "type": "int"
+        },
+        "id": {
+          "type": "int"
+        },
+        "start_quantity": {
+          "type": "double"
+        },
+        "end_quantity": {
+          "type": "double"
+        },
+        "unit_price": {
+          "type": "double"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductRequest": {
+      "id": "ProductRequest",
+      "properties": {
+        "pricing_plans": {
+          "items":{
+            "$ref":"PricingPlanRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_family_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_credit_card_at_signup_required": {
+          "type": "string"
+        },
+        "is_billing_address_at_signup_required": {
+          "type": "string"
+        },
+        "api_reference1": {
+          "type": "string"
+        },
+        "accounting_code": {
+          "type": "string"
+        }
+      }
+    },
+    "PricingPlanRequest": {
+      "id": "PricingPlanRequest",
+      "properties": {
+        "pricing_plan_payment_schedules": {
+          "items":{
+            "$ref":"ProductPricingPlanPaymentScheduleRequest"
+          },
+          "type": "List"
+        },
+        "product_items": {
+          "items":{
+            "$ref":"ProductItemRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "currency_code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "upfront_charge": {
+          "type": "double"
+        },
+        "trial_period_charge": {
+          "type": "double"
+        },
+        "trial_period_duration_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductPricingPlanPaymentScheduleRequest": {
+      "id": "ProductPricingPlanPaymentScheduleRequest",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "frequency_type": {
+          "type": "string"
+        },
+        "frequency_interval": {
+          "type": "int"
+        },
+        "frequency_relative_interval": {
+          "type": "string"
+        },
+        "frequency_recurrence_factor": {
+          "type": "int"
+        },
+        "subscription_period_change": {
+          "type": "double"
+        },
+        "start_date_offset_days": {
+          "type": "int"
+        },
+        "end_date_offset_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductItemRequest": {
+      "id": "ProductItemRequest",
+      "properties": {
+        "metered_prices": {
+          "items":{
+            "$ref":"ProductMeteredPriceRequest"
+          },
+          "type": "List"
+        },
+        "product_item_children": {
+          "items":{
+            "$ref":"ProductItemRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "charge_model": {
+          "type": "string"
+        },
+        "item_type": {
+          "type": "string"
+        },
+        "unit_name": {
+          "type": "string"
+        },
+        "is_visible_on_hosted_page": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ProductMeteredPriceRequest": {
+      "id": "ProductMeteredPriceRequest",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "start_quantity": {
+          "type": "double"
+        },
+        "end_quantity": {
+          "type": "double"
+        },
+        "unit_price": {
+          "type": "double"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

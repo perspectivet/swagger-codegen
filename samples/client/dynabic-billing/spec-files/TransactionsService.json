@@ -1,0 +1,218 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/transactions",
+  "apis": [
+    {
+      "path": "/transactions/{siteSubdomain}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetTransactionsForSite",
+          "summary": "GetTransactionsForSite",
+          "responseClass": "List[TransactionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/transactions/subscription/{subscriptionId}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetTransactionsForSubscription",
+          "summary": "GetTransactionsForSubscription",
+          "responseClass": "List[TransactionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/transactions/customer/{customerId}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetTransactionsForCustomer",
+          "summary": "GetTransactionsForCustomer",
+          "responseClass": "List[TransactionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "TransactionResponse": {
+      "id": "TransactionResponse",
+      "properties": {
+        "service_result": {
+          "type": "ServiceResult"
+        },
+        "transaction_date": {
+          "type": "Date"
+        },
+        "id": {
+          "type": "int"
+        },
+        "gateway_response_code": {
+          "type": "string"
+        },
+        "gateway_response_message": {
+          "type": "string"
+        },
+        "gateway_response_description": {
+          "type": "string"
+        },
+        "gateway_raw_request": {
+          "type": "string"
+        },
+        "gateway_raw_response": {
+          "type": "string"
+        },
+        "gateway_transaction_id": {
+          "type": "string"
+        },
+        "gateway_ref_transaction_id": {
+          "type": "string"
+        },
+        "gateway_status": {
+          "type": "string"
+        },
+        "refunded": {
+          "type": "double"
+        },
+        "gateway_settle_date": {
+          "type": "Date"
+        },
+        "subscription_balance": {
+          "type": "double"
+        },
+        "purchase_order_reference": {
+          "type": "string"
+        },
+        "settlement_attempts_count": {
+          "type": "int"
+        },
+        "last_settlement_attempt_date": {
+          "type": "Date"
+        },
+        "subscription_id": {
+          "type": "int"
+        },
+        "transaction_type": {
+          "type": "string"
+        },
+        "transaction_status": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "double"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceResult": {
+      "id": "ServiceResult",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/address",
+  "apis": [
+    {
+      "path": "/address/{addressId}.xml",
+      "operations": [
+        {
+          "nickname": "GetAddressXml",
+          "summary": "GetAddressXml",
+          "responseClass": "Address",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "addressId",
+              "description": "address id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/address/{addressId}.json",
+      "operations": [
+        {
+          "nickname": "GetAddressJson",
+          "summary": "GetAddressJson",
+          "responseClass": "Address",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "addressId",
+              "description": "address id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Address": {
+      "id": "Address",
+      "properties": {
+        "Id": {
+          "type": "int"
+        },
+        "CustomerId": {
+          "type": "int"
+        },
+        "IsBillingAddress": {
+          "type": "boolean"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "FaxNumber": {
+          "type": "string"
+        },
+        "Company": {
+          "type": "string"
+        },
+        "Address1": {
+          "type": "string"
+        },
+        "Address2": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "StateProvinceId": {
+          "type": "int"
+        },
+        "ZipPostalCode": {
+          "type": "string"
+        },
+        "CountryId": {
+          "type": "int"
+        },
+        "CreatedOn": {
+          "type": "Date"
+        },
+        "UpdatedOn": {
+          "type": "Date"
+        }
+      }
+    },
+    "StateProvince": {
+      "id": "StateProvince",
+      "properties": {
+        "Id": {
+          "type": "int"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "CountryTwoLetterISOCode": {
+          "type": "string"
+        },
+        "ProvinceNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "Country": {
+      "id": "Country",
+      "properties": {
+        "Id": {
+          "type": "int"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TwoLetterIsoCode": {
+          "type": "string"
+        },
+        "ThreeLetterIsoCode": {
+          "type": "string"
+        },
+        "NumericIsoCode": {
+          "type": "int"
+        },
+        "DisplayOrder": {
+          "type": "int"
+        },
+        "Fips": {
+          "type": "string"
+        },
+        "Capital": {
+          "type": "string"
+        },
+        "Area": {
+          "type": "int"
+        },
+        "Population": {
+          "type": "int"
+        },
+        "Continent": {
+          "type": "string"
+        },
+        "Tld": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "CurrencyName": {
+          "type": "string"
+        },
+        "PostalCodeFormat": {
+          "type": "string"
+        },
+        "PostalCodeRegex": {
+          "type": "string"
+        },
+        "Languages": {
+          "type": "string"
+        },
+        "Geonameid": {
+          "type": "int"
+        },
+        "Neighbours": {
+          "type": "string"
+        },
+        "EquivalentFipsCode": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

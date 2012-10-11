@@ -1,0 +1,238 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/events",
+  "apis": [
+    {
+      "path": "/events/subscription/{subscriptionId}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetEventsForSubscription",
+          "summary": "GetEventsForSubscription",
+          "responseClass": "List[EventResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page Number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page Size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/events/subscription/{subscriptionId}/{fromDate}/{format}?toDate={toDate}",
+      "operations": [
+        {
+          "nickname": "GetEventsForSubscriptionBetweenDates",
+          "summary": "GetEventsForSubscriptionBetweenDates",
+          "responseClass": "List[EventResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fromDate",
+              "description": "from Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "toDate",
+              "description": "to Date",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/events/{eventId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetEvent",
+          "summary": "GetEvent",
+          "responseClass": "EventResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "eventId",
+              "description": "event Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/events/site/{siteId}.{format}?eventTypeFilter={eventTypeFilter}&pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetEventsForSite",
+          "summary": "GetEventsForSite",
+          "responseClass": "List[EventResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteId",
+              "description": "site Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "eventTypeFilter",
+              "description": "event Type Filter",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page Number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page Size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/events/{format}?eventTypeFilter={eventTypeFilter}&numberOfReturnedEvents={numberOfReturnedEvents}",
+      "operations": [
+        {
+          "nickname": "GetEvents",
+          "summary": "GetEvents",
+          "responseClass": "List[EventResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "eventTypeFilter",
+              "description": "event Type Filter",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "numberOfReturnedEvents",
+              "description": "number Of Returned Events",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "EventResponse": {
+      "id": "EventResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "event_type": {
+          "type": "string"
+        },
+        "event_result": {
+          "type": "string"
+        },
+        "date": {
+          "type": "Date"
+        },
+        "site_id": {
+          "type": "int"
+        },
+        "parameters": {
+          "items":{
+            "$ref":"EventParam"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "EventParam": {
+      "id": "EventParam",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,953 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/customers",
+  "apis": [
+    {
+      "path": "/customers/{siteSubdomain}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetAllCustomers",
+          "summary": "GetAllCustomers",
+          "responseClass": "List[CustomerResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/byid/{customerId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetCustomer",
+          "summary": "GetCustomer",
+          "responseClass": "CustomerResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}/reference-id/{referenceId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetCustomerByReferenceId",
+          "summary": "GetCustomerByReferenceId",
+          "responseClass": "CustomerResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "referenceId",
+              "description": "reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}.{format}",
+      "operations": [
+        {
+          "nickname": "AddCustomer",
+          "summary": "AddCustomer",
+          "responseClass": "CustomerResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newCustomer",
+              "description": "new Customer",
+              "dataType": "CustomerRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateCustomer",
+          "summary": "UpdateCustomer",
+          "responseClass": "CustomerResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "updatedCustomer",
+              "description": "updated Customer",
+              "dataType": "CustomerRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}",
+      "operations": [
+        {
+          "nickname": "DeleteCustomer",
+          "summary": "DeleteCustomer",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/credit-card/{creditCardId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetCreditCard",
+          "summary": "GetCreditCard",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "creditCardId",
+              "description": "credit Card Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/credit-cards.{format}",
+      "operations": [
+        {
+          "nickname": "GetCreditCards",
+          "summary": "GetCreditCards",
+          "responseClass": "List[CreditCardResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}/reference-id/{customerReferenceId}/credit-cards.{format}",
+      "operations": [
+        {
+          "nickname": "GetCreditCardsByReferenceId",
+          "summary": "GetCreditCardsByReferenceId",
+          "responseClass": "List[CreditCardResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/credit-card.{format}",
+      "operations": [
+        {
+          "nickname": "GetCustomersFirstCreditCard",
+          "summary": "GetCustomersFirstCreditCard",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}/reference-id/{customerReferenceId}/credit-card.{format}",
+      "operations": [
+        {
+          "nickname": "GetFirstCreditCardForCustomerByReferenceId",
+          "summary": "GetFirstCreditCardForCustomerByReferenceId",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/credit-card.{format}",
+      "operations": [
+        {
+          "nickname": "AddCreditCard",
+          "summary": "AddCreditCard",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newCreditCard",
+              "description": "new Credit Card",
+              "dataType": "CreditCardRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/credit-card/{creditCardId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateCreditCard",
+          "summary": "UpdateCreditCard",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "creditCardId",
+              "description": "credit Card Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "updatedCreditCard",
+              "description": "updated Credit Card",
+              "dataType": "CreditCardRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomanin}/reference-id/{customerReferenceId}/credit-card/{creditCardId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateCreditCardByCustomerReferenceId",
+          "summary": "UpdateCreditCardByCustomerReferenceId",
+          "responseClass": "CreditCardResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomanin",
+              "description": "site Subdomanin",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "creditCardId",
+              "description": "credit Card Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "updatedCreditCard",
+              "description": "updated Credit Card",
+              "dataType": "CreditCardRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/credit-card/{creditCardId}",
+      "operations": [
+        {
+          "nickname": "DeleteCreditCard",
+          "summary": "DeleteCreditCard",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "creditCardId",
+              "description": "credit Card Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/billing-addresses.{format}",
+      "operations": [
+        {
+          "nickname": "GetBillingAddresses",
+          "summary": "GetBillingAddresses",
+          "responseClass": "List[AddressResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/first-billing-address.{format}",
+      "operations": [
+        {
+          "nickname": "GetBillingAddress",
+          "summary": "GetBillingAddresses",
+          "responseClass": "AddressResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}/reference-id/{customerReferenceId}/first-billing-address.{format}",
+      "operations": [
+        {
+          "nickname": "GetFirstBillingAddressForCustomerByReferenceId",
+          "summary": "GetFirstBillingAddressForCustomerByReferenceId",
+          "responseClass": "AddressResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/billing-address.{format}",
+      "operations": [
+        {
+          "nickname": "AddBillingAddress",
+          "summary": "AddBillingAddress",
+          "responseClass": "AddressResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newBillingAddress",
+              "description": "new Billing Address",
+              "dataType": "AddressRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/billing-address/{billingAddressId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateBillingAddress",
+          "summary": "UpdateBillingAddress",
+          "responseClass": "AddressResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "billingAddressId",
+              "description": "billing Address Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "updatedBillingAddress",
+              "description": "updated Billing Address",
+              "dataType": "AddressRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{siteSubdomain}/reference-id/{customerReferenceId}/billing-address/{billingAddressId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateBillingAddressByCustomerReferenceId",
+          "summary": "UpdateBillingAddressByCustomerReferenceId",
+          "responseClass": "AddressResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "billingAddressId",
+              "description": "billing Address Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "updatedBillingAddress",
+              "description": "updated Billing Address",
+              "dataType": "AddressRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/customers/{customerId}/billing-address/{billingAddressId}",
+      "operations": [
+        {
+          "nickname": "DeleteBillingAddress",
+          "summary": "DeleteBillingAddress",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "billingAddressId",
+              "description": "billing Address Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "CustomerResponse": {
+      "id": "CustomerResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "site_id": {
+          "type": "int"
+        },
+        "registration_date": {
+          "type": "Date"
+        },
+        "shipping_address": {
+          "type": "AddressResponse"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "shipping_address_id": {
+          "type": "int"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "is_shipping_address_same_to_billing": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AddressResponse": {
+      "id": "AddressResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "created_on": {
+          "type": "Date"
+        },
+        "updated_on": {
+          "type": "Date"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax_number": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip_postal_code": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerRequest": {
+      "id": "CustomerRequest",
+      "properties": {
+        "shipping_address": {
+          "type": "AddressRequest"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "shipping_address_id": {
+          "type": "int"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "is_shipping_address_same_to_billing": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AddressRequest": {
+      "id": "AddressRequest",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax_number": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip_postal_code": {
+          "type": "string"
+        }
+      }
+    },
+    "CreditCardResponse": {
+      "id": "CreditCardResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "status": {
+          "type": "string"
+        },
+        "first_name_on_card": {
+          "type": "string"
+        },
+        "last_name_on_card": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "expiration_date": {
+          "type": "Date"
+        },
+        "cvv": {
+          "type": "string"
+        }
+      }
+    },
+    "CreditCardRequest": {
+      "id": "CreditCardRequest",
+      "properties": {
+        "first_name_on_card": {
+          "type": "string"
+        },
+        "last_name_on_card": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "expiration_date": {
+          "type": "Date"
+        },
+        "cvv": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

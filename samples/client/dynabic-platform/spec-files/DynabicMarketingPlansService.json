@@ -1,0 +1,41 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/dynabicmarketingplans",
+  "apis": [
+    {
+      "path": "/dynabicmarketingplans/activate/{productId}",
+      "operations": [
+        {
+          "nickname": "SetActiveMarketingPlan",
+          "summary": "SetActiveMarketingPlan",
+          "responseClass": "SetActiveMarketingPlanResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "productId",
+              "description": "product Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SetActiveMarketingPlanResponse": {
+      "id": "SetActiveMarketingPlanResponse",
+      "properties": {
+        "active_subscription_id": {
+          "type": "int"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+package {{invokerPackage}};
+
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+import com.sun.jersey.api.client.WebResource.Builder;
+import com.sun.jersey.core.util.Base64;
+
+public class DynabicRequestSigner implements RequestSigner {
+
+	private static final String ENC = "UTF-8";
+	private static final String SIGN_ALG = "HmacSHA1";
+	private String privateKey;
+	private String clientKey;
+
+	public DynabicRequestSigner(String privateKey, String clientKey) {
+		this.privateKey = privateKey;
+		this.clientKey = clientKey;
+	}
+	
+	@Override
+	public String signUrl(String url) {
+		StringBuilder temp = new StringBuilder(url);
+		try {
+			temp.append((new URL(url).getQuery() == null ? "?" : "&")).append("clientkey=").append(clientKey);
+			String signature = sign(temp.toString());
+			temp.append("&signature=").append(signature);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		return temp.toString();
+	}
+
+	@Override
+	public String signContent(String requestBody, Builder builder) {
+    	if(requestBody != null){
+			builder.header("clientkey", clientKey);
+			builder.header("signature", sign(requestBody));
+    	}
+    	return requestBody;
+    }
+
+	private String sign(String toSign){
+		try {
+			Mac mac = Mac.getInstance(SIGN_ALG);
+			mac.init(new SecretKeySpec(privateKey.getBytes(ENC), SIGN_ALG));
+			String signature = new String(Base64.encode(mac.doFinal(toSign.toLowerCase().getBytes(ENC))), ENC);
+			if(signature.endsWith("=")){
+				signature = signature.substring(0, signature.length() - 1);
+			}
+			return signature.replaceAll("\\+", "-").replaceAll("\\/", "_");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (InvalidKeyException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+}

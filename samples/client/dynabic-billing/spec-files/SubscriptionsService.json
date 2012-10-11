@@ -1,0 +1,1544 @@
+{
+  "basePath": "api.dynabic.com/Billing",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/subscriptions",
+  "apis": [
+    {
+      "path": "/subscriptions/bysite/{siteSubdomain}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptions",
+          "summary": "GetSubscriptions",
+          "responseClass": "List[SubscriptionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{siteSubdomain}/status={status}.{format}?pageNumber={pageNumber}&pageSize={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionsForStatus",
+          "summary": "GetSubscriptionsForStatus",
+          "responseClass": "List[SubscriptionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageNumber",
+              "description": "page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "page size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{subscriptionId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSubscription",
+          "summary": "GetSubscription",
+          "responseClass": "SubscriptionResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{customerId}/subscriptions.{format}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionsOfCustomer",
+          "summary": "GetSubscriptionsOfCustomer",
+          "responseClass": "List[SubscriptionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "customerId",
+              "description": "customer Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{siteSubdomain}/{customerReferenceId}/subscriptions.{format}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionsOfCustomerByReferenceId",
+          "summary": "GetSubscriptionsOfCustomerByReferenceId",
+          "responseClass": "List[SubscriptionResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "customerReferenceId",
+              "description": "customer Reference Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{siteSubdomain}.{format}",
+      "operations": [
+        {
+          "nickname": "AddSubscription",
+          "summary": "AddSubscription",
+          "responseClass": "SubscriptionResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newSubscription",
+              "description": "new Subscription",
+              "dataType": "SubscriptionRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{siteSubdomain}/{subscriptionId}.{format}",
+      "operations": [
+        {
+          "nickname": "UpdateSubscription",
+          "summary": "UpdateSubscription",
+          "responseClass": "SubscriptionResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "siteSubdomain",
+              "description": "site Subdomain",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "updatedSubscription",
+              "description": "updated Subscription",
+              "dataType": "SubscriptionRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{subscriptionId}",
+      "operations": [
+        {
+          "nickname": "DeleteSubscription",
+          "summary": "DeleteSubscription",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{subscriptionId}/billing-address.{format}",
+      "operations": [
+        {
+          "nickname": "GetAddress",
+          "summary": "GetAddress",
+          "responseClass": "AddressResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/{subscriptionId}/customers.{format}",
+      "operations": [
+        {
+          "nickname": "GetCustomersForProduct",
+          "summary": "GetCustomersForProduct",
+          "responseClass": "List[CustomerResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/charge/{subscriptionId}",
+      "operations": [
+        {
+          "nickname": "AddChargeToSubscription",
+          "summary": "AddChargeToSubscription",
+          "responseClass": "TransactionResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "charge",
+              "description": "charge",
+              "dataType": "ChargeRequest",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/refund/{subscriptionId}/{transactionId}",
+      "operations": [
+        {
+          "nickname": "Refund",
+          "summary": "Refund",
+          "responseClass": "TransactionResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "charge",
+              "description": "charge",
+              "dataType": "ChargeRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "transactionId",
+              "description": "transaction Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/adjustbalance/{subscriptionId}/{isAmountAbsolute}",
+      "operations": [
+        {
+          "nickname": "AdjustSubscriptionBalance",
+          "summary": "AdjustSubscriptionBalance",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "isAmountAbsolute",
+              "description": "is Amount Absolute",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "charge",
+              "description": "charge",
+              "dataType": "ChargeRequest",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/changeproduct/{subscriptionId}/{newProductPricingPlanId}/{setNextBillingToNow}.{format}",
+      "operations": [
+        {
+          "nickname": "ChangeSubscriptionProduct",
+          "summary": "ChangeSubscriptionProduct",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newProductPricingPlanId",
+              "description": "new Product Pricing Plan Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "setNextBillingToNow",
+              "description": "indicates whether to set the next billing date to now",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/upgradedowngrade/{subscriptionId}/{newProductPricingPlanId}/{includeTrial}/{includeUpfrontCharge}.{format}",
+      "operations": [
+        {
+          "nickname": "UpgradeDowngradeSubscriptionProduct",
+          "summary": "UpgradeDowngradeSubscriptionProduct",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newProductPricingPlanId",
+              "description": "new Product Pricing Plan Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "includeTrial",
+              "description": "include Trial",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "includeUpfrontCharge",
+              "description": "include Upfront Charge",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/cancel/{subscriptionId}.{format}",
+      "operations": [
+        {
+          "nickname": "CancelSubscription",
+          "summary": "CancelSubscription",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "request",
+              "description": "request",
+              "dataType": "CancellationRequest",
+              "required": true,
+              "paramType": "body"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/reactivate/{subscriptionId}",
+      "operations": [
+        {
+          "nickname": "ReactivateSubscription",
+          "summary": "ReactivateSubscription",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/additems",
+      "operations": [
+        {
+          "nickname": "AddSubscriptionItems",
+          "summary": "AddSubscriptionItems",
+          "responseClass": "void",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "request",
+              "description": "request",
+              "dataType": "List[SubscriptionItemRequest]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/updateitems",
+      "operations": [
+        {
+          "nickname": "UpdateSubscriptionItems",
+          "summary": "UpdateSubscriptionItems",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "request",
+              "description": "request",
+              "dataType": "List[SubscriptionItemRequest]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/items/{subscriptionId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionItems",
+          "summary": "GetSubscriptionItems",
+          "responseClass": "List[SubscriptionItemResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/subscriptions/resetmetered/{subscriptionId}",
+      "operations": [
+        {
+          "nickname": "ResetSubscriptionMeteredItems",
+          "summary": "ResetSubscriptionMeteredItems",
+          "responseClass": "void",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "description": "subscription Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SubscriptionResponse": {
+      "id": "SubscriptionResponse",
+      "properties": {
+        "service_result": {
+          "type": "ServiceResult"
+        },
+        "credit_card": {
+          "type": "CreditCardResponse"
+        },
+        "customer": {
+          "type": "CustomerResponse"
+        },
+        "billing_address": {
+          "type": "AddressResponse"
+        },
+        "id": {
+          "type": "int"
+        },
+        "signup_date": {
+          "type": "Date"
+        },
+        "is_trial": {
+          "type": "boolean"
+        },
+        "cancellation_date": {
+          "type": "Date"
+        },
+        "revenue": {
+          "type": "double"
+        },
+        "next_product": {
+          "type": "ProductResponse"
+        },
+        "product": {
+          "type": "ProductResponse"
+        },
+        "next_product_pricing_plan": {
+          "type": "PricingPlanResponse"
+        },
+        "product_pricing_plan": {
+          "type": "PricingPlanResponse"
+        },
+        "status": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "int"
+        },
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "credit_card_id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "billing_address_id": {
+          "type": "int"
+        },
+        "start_date": {
+          "type": "Date"
+        },
+        "end_date": {
+          "type": "Date"
+        },
+        "next_assesment": {
+          "type": "Date"
+        },
+        "current_ballance": {
+          "type": "double"
+        },
+        "currency": {
+          "type": "Currency"
+        },
+        "is_cancelled_at_end_of_period": {
+          "type": "boolean"
+        },
+        "cancellation_details": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceResult": {
+      "id": "ServiceResult",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "CreditCardResponse": {
+      "id": "CreditCardResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "status": {
+          "type": "string"
+        },
+        "first_name_on_card": {
+          "type": "string"
+        },
+        "last_name_on_card": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "expiration_date": {
+          "type": "Date"
+        },
+        "cvv": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerResponse": {
+      "id": "CustomerResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "site_id": {
+          "type": "int"
+        },
+        "registration_date": {
+          "type": "Date"
+        },
+        "shipping_address": {
+          "type": "AddressResponse"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "shipping_address_id": {
+          "type": "int"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "is_shipping_address_same_to_billing": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AddressResponse": {
+      "id": "AddressResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "created_on": {
+          "type": "Date"
+        },
+        "updated_on": {
+          "type": "Date"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax_number": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip_postal_code": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductResponse": {
+      "id": "ProductResponse",
+      "properties": {
+        "is_archived": {
+          "type": "boolean"
+        },
+        "pricing_plans": {
+          "items":{
+            "$ref":"PricingPlanResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_family_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_credit_card_at_signup_required": {
+          "type": "string"
+        },
+        "is_billing_address_at_signup_required": {
+          "type": "string"
+        },
+        "api_reference1": {
+          "type": "string"
+        },
+        "accounting_code": {
+          "type": "string"
+        }
+      }
+    },
+    "PricingPlanResponse": {
+      "id": "PricingPlanResponse",
+      "properties": {
+        "product_id": {
+          "type": "int"
+        },
+        "pricing_plan_payment_schedules": {
+          "items":{
+            "$ref":"ProductPricingPlanPaymentScheduleResponse"
+          },
+          "type": "List"
+        },
+        "product_items": {
+          "items":{
+            "$ref":"ProductItemResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "currency_code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "upfront_charge": {
+          "type": "double"
+        },
+        "trial_period_charge": {
+          "type": "double"
+        },
+        "trial_period_duration_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductPricingPlanPaymentScheduleResponse": {
+      "id": "ProductPricingPlanPaymentScheduleResponse",
+      "properties": {
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "frequency_type": {
+          "type": "string"
+        },
+        "frequency_interval": {
+          "type": "int"
+        },
+        "frequency_relative_interval": {
+          "type": "string"
+        },
+        "frequency_recurrence_factor": {
+          "type": "int"
+        },
+        "subscription_period_change": {
+          "type": "double"
+        },
+        "start_date_offset_days": {
+          "type": "int"
+        },
+        "end_date_offset_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductItemResponse": {
+      "id": "ProductItemResponse",
+      "properties": {
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "metered_prices": {
+          "items":{
+            "$ref":"ProductMeteredPriceResponse"
+          },
+          "type": "List"
+        },
+        "product_item_children": {
+          "items":{
+            "$ref":"ProductItemResponse"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "charge_model": {
+          "type": "string"
+        },
+        "item_type": {
+          "type": "string"
+        },
+        "unit_name": {
+          "type": "string"
+        },
+        "is_visible_on_hosted_page": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ProductMeteredPriceResponse": {
+      "id": "ProductMeteredPriceResponse",
+      "properties": {
+        "product_item_id": {
+          "type": "int"
+        },
+        "id": {
+          "type": "int"
+        },
+        "start_quantity": {
+          "type": "double"
+        },
+        "end_quantity": {
+          "type": "double"
+        },
+        "unit_price": {
+          "type": "double"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Currency": {
+      "id": "Currency",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "id": {
+          "type": "int"
+        }
+      }
+    },
+    "SubscriptionRequest": {
+      "id": "SubscriptionRequest",
+      "properties": {
+        "credit_card": {
+          "type": "CreditCardRequest"
+        },
+        "customer": {
+          "type": "CustomerRequest"
+        },
+        "billing_address": {
+          "type": "AddressRequest"
+        },
+        "next_product": {
+          "type": "ProductRequest"
+        },
+        "product": {
+          "type": "ProductRequest"
+        },
+        "next_product_pricing_plan": {
+          "type": "PricingPlanRequest"
+        },
+        "product_pricing_plan": {
+          "type": "PricingPlanRequest"
+        },
+        "subscription_items": {
+          "items":{
+            "$ref":"SubscriptionItemRequest"
+          },
+          "type": "List"
+        },
+        "product_id": {
+          "type": "int"
+        },
+        "pricing_plan_id": {
+          "type": "int"
+        },
+        "credit_card_id": {
+          "type": "int"
+        },
+        "customer_id": {
+          "type": "int"
+        },
+        "billing_address_id": {
+          "type": "int"
+        },
+        "start_date": {
+          "type": "Date"
+        },
+        "end_date": {
+          "type": "Date"
+        },
+        "next_assesment": {
+          "type": "Date"
+        },
+        "current_ballance": {
+          "type": "double"
+        },
+        "currency": {
+          "type": "Currency"
+        },
+        "is_cancelled_at_end_of_period": {
+          "type": "boolean"
+        },
+        "cancellation_details": {
+          "type": "string"
+        }
+      }
+    },
+    "CreditCardRequest": {
+      "id": "CreditCardRequest",
+      "properties": {
+        "first_name_on_card": {
+          "type": "string"
+        },
+        "last_name_on_card": {
+          "type": "string"
+        },
+        "card_number": {
+          "type": "string"
+        },
+        "expiration_date": {
+          "type": "Date"
+        },
+        "cvv": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerRequest": {
+      "id": "CustomerRequest",
+      "properties": {
+        "shipping_address": {
+          "type": "AddressRequest"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "shipping_address_id": {
+          "type": "int"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "is_shipping_address_same_to_billing": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AddressRequest": {
+      "id": "AddressRequest",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax_number": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip_postal_code": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductRequest": {
+      "id": "ProductRequest",
+      "properties": {
+        "pricing_plans": {
+          "items":{
+            "$ref":"PricingPlanRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_family_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_credit_card_at_signup_required": {
+          "type": "string"
+        },
+        "is_billing_address_at_signup_required": {
+          "type": "string"
+        },
+        "api_reference1": {
+          "type": "string"
+        },
+        "accounting_code": {
+          "type": "string"
+        }
+      }
+    },
+    "PricingPlanRequest": {
+      "id": "PricingPlanRequest",
+      "properties": {
+        "pricing_plan_payment_schedules": {
+          "items":{
+            "$ref":"ProductPricingPlanPaymentScheduleRequest"
+          },
+          "type": "List"
+        },
+        "product_items": {
+          "items":{
+            "$ref":"ProductItemRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "currency_code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "upfront_charge": {
+          "type": "double"
+        },
+        "trial_period_charge": {
+          "type": "double"
+        },
+        "trial_period_duration_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductPricingPlanPaymentScheduleRequest": {
+      "id": "ProductPricingPlanPaymentScheduleRequest",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "frequency_type": {
+          "type": "string"
+        },
+        "frequency_interval": {
+          "type": "int"
+        },
+        "frequency_relative_interval": {
+          "type": "string"
+        },
+        "frequency_recurrence_factor": {
+          "type": "int"
+        },
+        "subscription_period_change": {
+          "type": "double"
+        },
+        "start_date_offset_days": {
+          "type": "int"
+        },
+        "end_date_offset_days": {
+          "type": "int"
+        }
+      }
+    },
+    "ProductItemRequest": {
+      "id": "ProductItemRequest",
+      "properties": {
+        "metered_prices": {
+          "items":{
+            "$ref":"ProductMeteredPriceRequest"
+          },
+          "type": "List"
+        },
+        "product_item_children": {
+          "items":{
+            "$ref":"ProductItemRequest"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "charge_model": {
+          "type": "string"
+        },
+        "item_type": {
+          "type": "string"
+        },
+        "unit_name": {
+          "type": "string"
+        },
+        "is_visible_on_hosted_page": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ProductMeteredPriceRequest": {
+      "id": "ProductMeteredPriceRequest",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "start_quantity": {
+          "type": "double"
+        },
+        "end_quantity": {
+          "type": "double"
+        },
+        "unit_price": {
+          "type": "double"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "SubscriptionItemRequest": {
+      "id": "SubscriptionItemRequest",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "subscription_id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "quantity": {
+          "type": "double"
+        }
+      }
+    },
+    "TransactionResponse": {
+      "id": "TransactionResponse",
+      "properties": {
+        "service_result": {
+          "type": "ServiceResult"
+        },
+        "transaction_date": {
+          "type": "Date"
+        },
+        "id": {
+          "type": "int"
+        },
+        "gateway_response_code": {
+          "type": "string"
+        },
+        "gateway_response_message": {
+          "type": "string"
+        },
+        "gateway_response_description": {
+          "type": "string"
+        },
+        "gateway_raw_request": {
+          "type": "string"
+        },
+        "gateway_raw_response": {
+          "type": "string"
+        },
+        "gateway_transaction_id": {
+          "type": "string"
+        },
+        "gateway_ref_transaction_id": {
+          "type": "string"
+        },
+        "gateway_status": {
+          "type": "string"
+        },
+        "refunded": {
+          "type": "double"
+        },
+        "gateway_settle_date": {
+          "type": "Date"
+        },
+        "subscription_balance": {
+          "type": "double"
+        },
+        "purchase_order_reference": {
+          "type": "string"
+        },
+        "settlement_attempts_count": {
+          "type": "int"
+        },
+        "last_settlement_attempt_date": {
+          "type": "Date"
+        },
+        "subscription_id": {
+          "type": "int"
+        },
+        "transaction_type": {
+          "type": "string"
+        },
+        "transaction_status": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "double"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        }
+      }
+    },
+    "ChargeRequest": {
+      "id": "ChargeRequest",
+      "properties": {
+        "amount": {
+          "type": "double"
+        },
+        "memo": {
+          "type": "string"
+        }
+      }
+    },
+    "CancellationRequest": {
+      "id": "CancellationRequest",
+      "properties": {
+        "isCancelledAtEndOfPeriod": {
+          "type": "boolean"
+        },
+        "cancelationDetails": {
+          "type": "string"
+        }
+      }
+    },
+    "SubscriptionItemResponse": {
+      "id": "SubscriptionItemResponse",
+      "properties": {
+        "update_history": {
+          "items":{
+            "$ref":"SubscriptionItemHistoryResponse"
+          },
+          "type": "List"
+        },
+        "subscription_id": {
+          "type": "int"
+        },
+        "product_item_id": {
+          "type": "int"
+        },
+        "quantity": {
+          "type": "double"
+        }
+      }
+    },
+    "SubscriptionItemHistoryResponse": {
+      "id": "SubscriptionItemHistoryResponse",
+      "properties": {
+        "old_value": {
+          "type": "double"
+        },
+        "new_value": {
+          "type": "double"
+        },
+        "description": {
+          "type": "string"
+        },
+        "update_on": {
+          "type": "Date"
+        }
+      }
+    }
+  }
+}

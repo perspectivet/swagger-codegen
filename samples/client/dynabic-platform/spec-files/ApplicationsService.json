@@ -1,0 +1,212 @@
+{
+  "basePath": "api.dynabic.com/platform",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath":"/apps",
+  "apis": [
+    {
+      "path": "/apps/{format}",
+      "operations": [
+        {
+          "nickname": "GetAllApplications",
+          "summary": "GetAllApplications",
+          "responseClass": "List[ApplicationResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/apps/bycompany/{format}",
+      "operations": [
+        {
+          "nickname": "GetCompanyApplications",
+          "summary": "GetCompanyApplications",
+          "responseClass": "List[ApplicationInCompanyResponse]",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/apps/{applicationId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetCompanyApplicationById",
+          "summary": "GetCompanyApplicationById",
+          "responseClass": "ApplicationInCompanyResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "applicationId",
+              "description": "application Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/apps/[{appName}].{format}",
+      "operations": [
+        {
+          "nickname": "GetCompanyApplicationByName",
+          "summary": "GetCompanyApplicationByName",
+          "responseClass": "ApplicationInCompanyResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "appName",
+              "description": "app Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/apps/plan/{applicationId}.{format}",
+      "operations": [
+        {
+          "nickname": "GetApplicationCurrentPlan",
+          "summary": "GetApplicationCurrentPlan",
+          "responseClass": "ApplicationPlan",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "applicationId",
+              "description": "application Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "format",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/apps/{applicationId}/{status}",
+      "operations": [
+        {
+          "nickname": "SetApplicationStatus",
+          "summary": "SetApplicationStatus",
+          "responseClass": "void",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "applicationId",
+              "description": "application Id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "ApplicationResponse": {
+      "id": "ApplicationResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ApplicationInCompanyResponse": {
+      "id": "ApplicationInCompanyResponse",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "application_id": {
+          "type": "int"
+        },
+        "added": {
+          "type": "Date"
+        },
+        "updated": {
+          "type": "Date"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ApplicationPlan": {
+      "id": "ApplicationPlan",
+      "properties": {
+        "application_id": {
+          "type": "int"
+        },
+        "product_id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "currency_code": {
+          "type": "string"
+        },
+        "subscription_period_charge": {
+          "type": "double"
+        }
+      }
+    }
+  }
+}
