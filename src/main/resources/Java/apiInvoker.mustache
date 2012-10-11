@@ -1,41 +1,73 @@
 package {{invokerPackage}};
 
-import com.wordnik.swagger.core.util.JsonUtil;
-
-import com.fasterxml.jackson.core.JsonGenerator.Feature;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jersey.api.client.filter.LoggingFilter;
-import com.sun.jersey.api.client.WebResource.Builder;
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.io.IOException;
+import com.fasterxml.jackson.databind.JavaType;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource.Builder;
+import com.sun.jersey.api.client.filter.LoggingFilter;
+import com.sun.jersey.multipart.file.DefaultMediaTypePredictor;
+import com.wordnik.swagger.core.util.JsonUtil;
 
 public class ApiInvoker {
   private static ApiInvoker INSTANCE = new ApiInvoker();
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
+  private static final String ENC = "UTF-8";
+  private RequestSigner signer;
+
 
   public static ApiInvoker getInstance() {
     return INSTANCE;
   }
+
+  public void setRequestSigner(RequestSigner signer){
+	  this.signer = signer;
+  }
   
   public void addDefaultHeader(String key, String value) {
-     defaultHeaderMap.put(key, value);
+	   defaultHeaderMap.put(key, value);
   }
 
   public String escapeString(String str) {
-    return str;
+	  return encodeURIComponent(str);
+  }
+
+  public String encodeURI(String uri) {
+	  return encodeURIComponent(uri)
+			  .replaceAll("\\%3B", ";")
+			  .replaceAll("\\%2C", ",")
+			  .replaceAll("\\%2F", "/")
+			  .replaceAll("\\%3F", "?")
+			  .replaceAll("\\%3A", ":")
+			  .replaceAll("\\%40", "@")
+			  .replaceAll("\\%26", "&")
+			  .replaceAll("\\%3D", "=")
+			  .replaceAll("\\%2B", "+")
+			  .replaceAll("\\%24", "$");
+  }
+
+  public String encodeURIComponent(String str) {
+	  try {
+		  return URLEncoder.encode(str, ENC)
+	              .replaceAll("\\+", "%20")
+	              .replaceAll("\\%21", "!")
+	              .replaceAll("\\%27", "'")
+	              .replaceAll("\\%28", "(")
+	              .replaceAll("\\%29", ")")
+	              .replaceAll("\\%7E", "~");
+	  } catch(UnsupportedEncodingException e){
+    	  return str;
+	  }
   }
 
   public static Object deserialize(String json, String containerType, Class cls) throws ApiException {
@@ -46,11 +78,7 @@ public class ApiInvoker {
         return response;
       }
       else if(String.class.equals(cls)) {
-        if(json != null && json.startsWith("\"") && json.endsWith("\"") && json.length() > 1) {
-          return json.substring(1, json.length() - 2);
-        }
-        else 
-          return json;
+        return json;
       }
       else {
         return JsonUtil.getJsonMapper().readValue(json, cls);
@@ -64,7 +92,7 @@ public class ApiInvoker {
   public static String serialize(Object obj) throws ApiException {
     try {
       if (obj != null) return JsonUtil.getJsonMapper().writeValueAsString(obj);
-      else return null;
+      else return "{}";
     }
     catch (Exception e) {
       throw new ApiException(500, e.getMessage());
@@ -77,58 +105,86 @@ public class ApiInvoker {
     StringBuilder b = new StringBuilder();
     
     for(String key : queryParams.keySet()) {
-      String value = queryParams.get(key);
-      if (value != null){
-        if(b.toString().length() == 0) b.append("?");
-        else b.append("&");
-        b.append(escapeString(key)).append("=").append(escapeString(value));
-      }
+    	String value = queryParams.get(key);
+    	if (value != null){
+    		if(b.toString().length() == 0) b.append("?");
+    		else b.append("&");
+    		b.append(escapeString(key)).append("=").append(escapeString(value));
+    	}
     }
     String querystring = b.toString();
 
-    Builder builder = client.resource(host + path + querystring).type("application/json");
+    boolean isFileUpload = false;
+    MediaType contentType;
+    if(body == null) {
+    	contentType = MediaType.TEXT_HTML_TYPE;
+    } else {
+    	contentType = MediaType.APPLICATION_JSON_TYPE;
+    	if(body instanceof File){
+    		isFileUpload = true;
+    		contentType = DefaultMediaTypePredictor.CommonMediaTypes.getMediaTypeFromFile((File)body);
+    	}
+    }
+    
+    Builder builder = client.resource(encodeURI(signer.signUrl(host + path + querystring))).type(contentType);
     for(String key : headerParams.keySet()) {
-      builder.header(key, headerParams.get(key));
+    	builder.header(key, headerParams.get(key));
     }
     
     for(String key : defaultHeaderMap.keySet()) {
-      if(!headerParams.containsKey(key)) {
-        builder.header(key, defaultHeaderMap.get(key));
-      }
+    	if(!headerParams.containsKey(key)) {
+    		builder.header(key, defaultHeaderMap.get(key));
+    	}
     }
     ClientResponse response = null;
 
     if("GET".equals(method)) {
-      response = (ClientResponse) builder.get(ClientResponse.class);
+    	response = (ClientResponse) builder.get(ClientResponse.class);
     }
     else if ("POST".equals(method)) {
-        response = builder.post(ClientResponse.class, serialize(body));
+    	Object requestBody;
+    	if(isFileUpload){
+    		requestBody = body;
+    	} else {
+    		requestBody = signer.signContent(serialize(body), builder);
+    	}
+        response = builder.post(ClientResponse.class, requestBody);
     }
     else if ("PUT".equals(method)) {
-      response = builder.put(ClientResponse.class, serialize(body));
+    	Object requestBody;
+    	if(isFileUpload){
+    		requestBody = body;
+    	} else {
+    		requestBody = signer.signContent(serialize(body), builder);
+    	}
+        response = builder.put(ClientResponse.class, requestBody);
       }
     else if ("DELETE".equals(method)) {
-        response = builder.delete(ClientResponse.class, serialize(body));
+        response = builder.delete(ClientResponse.class, signer.signContent(serialize(body), builder));
     }
     else {
-      throw new ApiException(500, "unknown method type " + method);
+    	throw new ApiException(500, "unknown method type " + method);
     }
-    if(response.getClientResponseStatus() == ClientResponse.Status.OK) {
-      return (String) response.getEntity(String.class);
+    if(response.getClientResponseStatus() == ClientResponse.Status.OK
+    	|| response.getClientResponseStatus() == ClientResponse.Status.CREATED
+        || response.getClientResponseStatus() == ClientResponse.Status.ACCEPTED
+        || response.getClientResponseStatus() == ClientResponse.Status.NOT_FOUND) {
+    	return (String) response.getEntity(String.class);
     }
     else {
-      throw new ApiException(
-                response.getClientResponseStatus().getStatusCode(),
-                response.getEntity(String.class));      
+    	throw new ApiException(
+    	          response.getClientResponseStatus().getStatusCode(),
+    	          response.getEntity(String.class));    	
     }
   }
 
   private Client getClient(String host) {
-  if(!hostMap.containsKey(host)) {
-    Client client = Client.create();
-    client.addFilter(new LoggingFilter());
+	if(!hostMap.containsKey(host)) {
+		Client client = Client.create();
+		client.addFilter(new LoggingFilter());
         hostMap.put(host, client);
+	}
+	return hostMap.get(host);
   }
-  return hostMap.get(host);
-  }
+  
 }

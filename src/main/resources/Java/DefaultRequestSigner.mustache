@@ -1,0 +1,16 @@
+package {{invokerPackage}};
+
+
+public class DefaultRequestSigner implements RequestSigner {
+
+	@Override
+	public String signUrl(String url) {
+		return url;
+	}
+
+	@Override
+	public String signContent(String requestBody, Builder builder) {
+    	return requestBody;
+    }
+
+}
