@@ -1,0 +1,49 @@
+package {{package}};
+
+{{#imports}}import {{import}};
+{{/imports}}
+
+import java.util.*;
+
+public class Utils {
+
+	public static void hackCopy(CompanyInfoResponse companyInfo, CompanyInfoRequest companyInfoCopy) {
+		companyInfoCopy.setCountry(companyInfo.getCountry());
+		companyInfoCopy.setCulture(companyInfo.getCulture());
+		companyInfoCopy.setCurrency(companyInfo.getCurrency());
+		companyInfoCopy.setEmail(companyInfo.getEmail());
+		companyInfoCopy.setPhone(companyInfo.getPhone());
+		companyInfoCopy.setTimezone(companyInfo.getTimezone());
+	}
+	
+	public static void hackCopy(SettingResponse src, SettingRequest dest) {
+		dest.setSite_id(src.getSite_id());
+		dest.setName(src.getName());
+		dest.setValue(src.getValue());
+		dest.setDescription(src.getDescription());
+	}
+
+	public static void hackCopy(SiteResponse src, SiteRequest dest) {
+		dest.setIs_test_mode(src.getIs_test_mode());
+		dest.setName(src.getName());
+		dest.setSubdomain(src.getSubdomain());
+	}
+
+	public static void hackCopy(UserResponse src, UserRequest dest) {
+		dest.setFirst_name(src.getFirst_name() + "_updated");
+		dest.setLast_name(src.getLast_name());
+		dest.setActive(src.getActive());
+		dest.setEmail(src.getEmail());
+		dest.setDeleted(src.getDeleted());
+		dest.setIs_subscribed_to_newsletter(src.getIs_subscribed_to_newsletter());
+		dest.setFacebook_id(src.getFacebook_id());
+		dest.setGoogleapps_user_name(src.getGoogleapps_user_name());
+		dest.setFirst_name(src.getFirst_name());
+		dest.setYahoo_user_name(src.getYahoo_user_name());
+		dest.setCurrency(src.getCurrency());
+		dest.setCountry(src.getCountry());
+		dest.setCulture(src.getCulture());
+		dest.setTimezone(src.getTimezone());
+	}
+
+}

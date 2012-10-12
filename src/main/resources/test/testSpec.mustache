@@ -1,0 +1,13 @@
+{{#operations}}
+Service: {{classname}}
+
+	{{#operation}}
+	Operation: {{nickname}}
+	{{#allParams}}{{dataType}} {{paramName}} = {{{defaultTestValue}}}
+	{{/allParams}}
+	{{#returnType}}{{{returnType}}} response = {{/returnType}}{{classname}}.{{nickname}}({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
+	{{#returnType}}response NotEquals null{{/returnType}}
+	{{miss}}
+	
+	{{/operation}}
+{{/operations}}

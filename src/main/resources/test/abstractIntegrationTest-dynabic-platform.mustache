@@ -1,0 +1,83 @@
+package {{package}};
+
+{{#imports}}import {{import}};
+{{/imports}}
+
+import java.text.SimpleDateFormat;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+
+
+public abstract class AbstractIntegrationTest {
+	public static String API_SERVER;
+	public static SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("ddMMyyyy");
+	private static final Boolean enableLogging;
+	public static SitesApi sitesApi = new SitesApi();
+
+	static {
+		String apiServer = System.getProperty("apiServer", "https://stage-api.dynabic.com/");
+		if(apiServer.endsWith("/")){
+			API_SERVER = apiServer + "Platform";
+		} else {
+			API_SERVER = apiServer + "/Platform";
+		}
+		String clientKey = System.getProperty("clientKey", "demo_public_key");
+		String privateKey = System.getProperty("privateKey", "demo_private_key");
+		enableLogging = Boolean.valueOf(System.getProperty("enableLogging", "true"));
+		ApiInvoker.getInstance().setRequestSigner(new DynabicRequestSigner(privateKey, clientKey));
+		sitesApi.setBasePath(API_SERVER);
+	}
+
+	protected String subdomain = "sdkTestSubdomain";
+	protected String siteId;
+	protected boolean runSetup = true;
+
+	@Before
+	public void setUpSite() throws ApiException {
+		if(runSetup){
+			log("Setting up site... " + Thread.currentThread().getName());
+	
+			SiteResponse site = addSite();
+			Assert.assertNotNull(site);
+			Assert.assertNotNull(site.getId());
+			siteId = String.valueOf(site.getId());
+		}
+	}
+
+	@After
+	public void tearDownSite() {
+		if(runSetup){
+			log("Tearing down site...");
+			try {
+				sitesApi.DeleteSite(siteId.toString());
+			} catch (ApiException ignore) {
+				// already deleted
+			}
+		}
+	}
+
+	public static void log(Object msg){
+		if(enableLogging){
+			System.out.println(msg);
+		}
+	}
+
+	public SiteResponse addSite() throws ApiException {
+		try {
+			SiteResponse response = sitesApi.GetSiteBySubdomain(subdomain, "json");
+			if(response != null){
+				sitesApi.DeleteSite(String.valueOf(response.getId()));
+			}
+		} catch(ApiException ignore){}
+
+		SiteRequest postData = new SiteRequest();
+		postData.setIs_test_mode(true);
+		postData.setName("Name");
+		postData.setSubdomain(subdomain);
+
+		return sitesApi.AddSite(postData, "json");
+	}
+
+}
+

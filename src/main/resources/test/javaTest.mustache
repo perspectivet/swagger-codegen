@@ -1,0 +1,25 @@
+package {{package}};
+
+{{#imports}}import {{import}};
+{{/imports}}
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import java.util.*;
+
+@Category(IntegrationTest.class)
+public class Test{{service}} extends AbstractIntegrationTest {
+  
+	{{#operations}}@Test
+	public void test{{operation}}({{#methodParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/methodParams}}) throws ApiException {
+	
+  		{{#statements}}{{{assignment}}}{{{utilityMethod}}}{{{methodCall}}}{{{assertion}}};
+		{{/statements}}
+	{{miss}}
+	}
+	
+	{{/operations}}
+{{miss}}
+}
