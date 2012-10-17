@@ -176,6 +176,6 @@ class BasicJavaGenerator extends BasicGenerator {
     else word
   }
   
-  override def toVarName(name: String): String = name.replaceAll("-", "_")
+  override def toVarName(name: String): String = super.toVarName(name).replaceAll("-", "_")
   
 }
