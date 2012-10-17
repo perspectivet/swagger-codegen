@@ -50,7 +50,8 @@ class BasicJavaGenerator extends BasicGenerator {
     "float" -> "Float",
     "long" -> "Long",
     "double" -> "Double",
-    "object" -> "Object")
+    "object" -> "Object",
+    "stream" -> "InputStream")
 
   // location of templates
   override def templateDir = "Java"
@@ -77,7 +78,8 @@ class BasicJavaGenerator extends BasicGenerator {
     "Date" -> "java.util.Date",
     "Array" -> "java.util.*",
     "ArrayList" -> "java.util.*",
-    "List" -> "java.util.*")
+    "List" -> "java.util.*",
+    "Stream" -> "java.io.InputStream")
 
   // file suffix
   override def fileSuffix = ".java"
