@@ -200,7 +200,14 @@ class Codegen(config: CodegenConfig) {
         params += (param.paramType + "Parameter") -> "true"
         params += "type" -> param.paramType
         params += "defaultValue" -> config.toDefaultValue(param.dataType, param.defaultValue)
-        params += "dataType" -> config.toDeclaredType(param.dataType)
+        params += "dataType" -> { 
+          val ComplexTypeMatcher = "(.*)\\[(.*)\\].*".r
+          val paramDataType = param.dataType match {
+            case ComplexTypeMatcher(container, basePart) => container + "[" + config.toDeclaredType(basePart) + "]"
+            case dataType => dataType
+          }
+          config.toDeclaredType(paramDataType)
+        }
         params += "swaggerDataType" -> param.dataType
         params += "description" -> param.description
         params += "hasMore" -> "true"
