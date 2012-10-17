@@ -1,6 +1,6 @@
 package {{invokerPackage}};
 
-import java.io.File;
+import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -42,7 +42,7 @@ public class ApiInvoker {
 	  return encodeURIComponent(str);
   }
 
-  public String encodeURI(String uri) {
+  public static String encodeURI(String uri) {
 	  return encodeURIComponent(uri)
 			  .replaceAll("\\%3B", ";")
 			  .replaceAll("\\%2C", ",")
@@ -52,11 +52,12 @@ public class ApiInvoker {
 			  .replaceAll("\\%40", "@")
 			  .replaceAll("\\%26", "&")
 			  .replaceAll("\\%3D", "=")
-			  .replaceAll("\\%2B", "+")
-			  .replaceAll("\\%24", "$");
+			  //.replaceAll("\\%2B", "+")
+			  .replaceAll("\\%24", "$")
+			  .replaceAll("\\%25", "%");
   }
 
-  public String encodeURIComponent(String str) {
+  public static String encodeURIComponent(String str) {
 	  try {
 		  return URLEncoder.encode(str, ENC)
 	              .replaceAll("\\+", "%20")
@@ -120,9 +121,9 @@ public class ApiInvoker {
     	contentType = MediaType.TEXT_HTML_TYPE;
     } else {
     	contentType = MediaType.APPLICATION_JSON_TYPE;
-    	if(body instanceof File){
+    	if(body instanceof InputStream){
     		isFileUpload = true;
-    		contentType = DefaultMediaTypePredictor.CommonMediaTypes.getMediaTypeFromFile((File)body);
+    		contentType = MediaType.APPLICATION_OCTET_STREAM_TYPE;
     	}
     }
     
