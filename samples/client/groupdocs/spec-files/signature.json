@@ -1,0 +1,5109 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/signature",
+  "apis": [
+    {
+      "path": "/signature/{userId}/templates/{templateId}/documents/{documentId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureTemplateDocument",
+          "summary": "Remove document from template",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/documents/{documentId}/recipient/{recipientId}/field/{fieldId}",
+      "operations": [
+        {
+          "nickname": "AddSignatureTemplateField",
+          "summary": "Add signature template field",
+          "responseClass": "SignatureTemplateFieldResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldSettings",
+              "description": "Settings of the field",
+              "dataType": "SignatureTemplateFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/documents/{documentId}/field/{fieldId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureTemplateField",
+          "summary": "Modify signature template field",
+          "responseClass": "SignatureTemplateFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldSettings",
+              "description": "Settings of the field",
+              "dataType": "SignatureTemplateFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/fields/{fieldId}/locations/{locationId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureTemplateFieldLocation",
+          "summary": "Delete signature template field location",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "locationId",
+              "description": "Field location GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/documents/{documentId}/recipient/{recipientId}/fields/{fieldId}/locations/{locationId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureTemplateFieldLocation",
+          "summary": "Modify signature template field location",
+          "responseClass": "SignatureTemplateFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "locationId",
+              "description": "Field location GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the field location",
+              "dataType": "SignatureTemplateFieldLocationSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/fields?document={documentId}&recipient={recipientId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplateFields",
+          "summary": "Get template fields",
+          "responseClass": "SignatureTemplateFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/fields/{fieldId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureTemplateField",
+          "summary": "Delete signature template field",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/signatures?records={count}&page={page}&name={name}",
+      "operations": [
+        {
+          "nickname": "GetSignatures",
+          "summary": "Get user signatures",
+          "responseClass": "SignatureSignaturesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "page",
+              "description": "Show records for page number",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "name",
+              "description": "Filter by signature name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Show records count",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/signatures/{signatureId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignature",
+          "summary": "Delete user signature",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "signatureId",
+              "description": "Signature GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/signature?name={name}",
+      "operations": [
+        {
+          "nickname": "CreateSignature",
+          "summary": "Create user signature",
+          "responseClass": "SignatureSignatureResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "Signature name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the field",
+              "dataType": "SignatureSignatureSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/recipient/{recipientId}/field/{fieldId}?signatureId={signatureId}",
+      "operations": [
+        {
+          "nickname": "FillEnvelopeField",
+          "summary": "Fill envelope field",
+          "responseClass": "SignatureEnvelopeFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "postData",
+              "description": "Data to be placed in field",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}/sign",
+      "operations": [
+        {
+          "nickname": "SignEnvelope",
+          "summary": "Sign envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}/decline",
+      "operations": [
+        {
+          "nickname": "DeclineEnvelope",
+          "summary": "Decline envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}/delegate?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}",
+      "operations": [
+        {
+          "nickname": "DelegateEnvelopeRecipient",
+          "summary": "Delegate envelope recipient",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "email",
+              "description": "Delegated recipient email",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "firstname",
+              "description": "Delegated recipient first name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "lastname",
+              "description": "Delegated recipient last name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/contact",
+      "operations": [
+        {
+          "nickname": "AddContact",
+          "summary": "Add contact",
+          "responseClass": "SignatureContactResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contactSettings",
+              "description": "Contact data",
+              "dataType": "SignatureContactSettings",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/contacts/{contactId}",
+      "operations": [
+        {
+          "nickname": "ModifyContact",
+          "summary": "Update contact",
+          "responseClass": "SignatureContactResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contactId",
+              "description": "Contact GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contactSettings",
+              "description": "Contact data",
+              "dataType": "SignatureContactSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/contacts?firstName={firstName}&lastName={lastName}&email={email}&records={count}&page={page}",
+      "operations": [
+        {
+          "nickname": "GetContacts",
+          "summary": "Get contacts",
+          "responseClass": "SignatureContactsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "page",
+              "description": "Page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "firstName",
+              "description": "Filter by firstName",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "lastName",
+              "description": "Filter by lastName",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "email",
+              "description": "Filter by email",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Records count to be returned",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/contacts/{contactId}",
+      "operations": [
+        {
+          "nickname": "DeleteContact",
+          "summary": "Delete contact",
+          "responseClass": "SignatureContactResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contactId",
+              "description": "Contact GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/contacts",
+      "operations": [
+        {
+          "nickname": "ImportContacts",
+          "summary": "Import contacts",
+          "responseClass": "SignatureContactsImportResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "contactsSettings",
+              "description": "Array of SignatureContactSettings",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/resources?statusIds={statusIds}",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopeResources",
+          "summary": "Get envelope recources",
+          "responseClass": "SignatureEnvelopeResourcesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "statusIds",
+              "description": "Envelope status identifier - comma separated list",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/integration",
+      "operations": [
+        {
+          "nickname": "AddContactIntegration",
+          "summary": "Add Contact Integration Authorization",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "integrationAuthorizationSettings",
+              "description": "Authorization settings",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/lists",
+      "operations": [
+        {
+          "nickname": "GetSignaturePredefinedLists",
+          "summary": "Get user predefined lists",
+          "responseClass": "SignaturePredefinedListsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/list",
+      "operations": [
+        {
+          "nickname": "AddPredefinedList",
+          "summary": "Add predefined list",
+          "responseClass": "SignaturePredefinedListResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "listSettings",
+              "description": "List data",
+              "dataType": "SignaturePredefinedListSettings",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/lists/{listId}",
+      "operations": [
+        {
+          "nickname": "DeletePredefinedList",
+          "summary": "Delete predefined list",
+          "responseClass": "SignaturePredefinedListResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "listId",
+              "description": "List GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/logs",
+      "operations": [
+        {
+          "nickname": "GetEnvelopeAuditLogs",
+          "summary": "Get envelope audit logs",
+          "responseClass": "SignatureEnvelopeAuditLogsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/form?name={name}&templateId={templateId}&assemblyId={assemblyId}",
+      "operations": [
+        {
+          "nickname": "CreateSignatureForm",
+          "summary": "Create signature form",
+          "responseClass": "SignatureFormResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "Form name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the new envelope",
+              "dataType": "SignatureEnvelopeSettings",
+              "required": false,
+              "paramType": "body"
+            },
+            {
+              "name": "assemblyGuid",
+              "description": "A guid of the assembly which will be used to created the new form",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "templateGuid",
+              "description": "A templateGuid of the template which will be used to created the new form",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}/documents",
+      "operations": [
+        {
+          "nickname": "GetSignatureFormDocuments",
+          "summary": "Get documents in form",
+          "responseClass": "SignatureFormDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}/fields?document={documentId}&participant={participantId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureFormFields",
+          "summary": "Get form fields for document in form per participant",
+          "responseClass": "SignatureFormFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "participantId",
+              "description": "Participant GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureForm",
+          "summary": "Delete signature form",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureForm",
+          "summary": "Get signature form",
+          "responseClass": "SignatureFormResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms?statusId={statusId}&records={count}&page={page}&document={originalDocumentMD5}&date={date}&name={name}",
+      "operations": [
+        {
+          "nickname": "GetSignatureForms",
+          "summary": "Get signature forms",
+          "responseClass": "SignatureFormsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "statusId",
+              "description": "Filter envelopes by statusId",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "page",
+              "description": "Show records for page number",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "date",
+              "description": "Filter forms by date",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "name",
+              "description": "Filter forms by name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Show records count",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "documentId",
+              "description": "Filter forms by document GUID",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}?new_name={name}",
+      "operations": [
+        {
+          "nickname": "RenameSignatureForm",
+          "summary": "Rename signature form",
+          "responseClass": "SignatureFormResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "New envelope name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}/publish",
+      "operations": [
+        {
+          "nickname": "PublishSignatureForm",
+          "summary": "Publish signature form",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}/complete",
+      "operations": [
+        {
+          "nickname": "CompleteSignatureForm",
+          "summary": "Complete signature form",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureForm",
+          "summary": "Modify signature form",
+          "responseClass": "SignatureFormResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the form",
+              "dataType": "SignatureFormSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/{formId}/archive",
+      "operations": [
+        {
+          "nickname": "ArchiveSignatureForm",
+          "summary": "Archive signature form",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formId",
+              "description": "Form GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/forms/resources?statusIds={statusIds}",
+      "operations": [
+        {
+          "nickname": "GetSignatureFormResources",
+          "summary": "Get form recources",
+          "responseClass": "SignatureFormResourcesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "statusIds",
+              "description": "Form status identifier - comma separated list",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/resources",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplateResources",
+          "summary": "Get template recources",
+          "responseClass": "SignatureTemplateResourcesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/sign",
+      "operations": [
+        {
+          "nickname": "SignDocument",
+          "summary": "Sign document",
+          "responseClass": "SignatureSignDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the signing document",
+              "dataType": "SignatureSignDocumentSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes?statusId={statusId}&records={count}&page={page}&document={originalDocumentMD5}&recipient={recipientEmail}&date={date}&name={name}",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopes",
+          "summary": "Get signature envelopes",
+          "responseClass": "SignatureEnvelopesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "statusId",
+              "description": "Filter envelopes by statusId",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "page",
+              "description": "Show records for page number",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "recipientEmail",
+              "description": "Filter envelopes by recipient email",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "date",
+              "description": "Filter envelopes by date",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "name",
+              "description": "Filter envelopes by name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Show records count",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "documentId",
+              "description": "Filter envelopes by document GUID",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/recipient?statusId={statusId}&records={count}&page={page}",
+      "operations": [
+        {
+          "nickname": "GetRecipientSignatureEnvelopes",
+          "summary": "Get signature envelopes where the user is recipient",
+          "responseClass": "SignatureEnvelopesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "statusId",
+              "description": "Filter envelopes by statusId",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "page",
+              "description": "Show records for page number",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Show records count",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelope",
+          "summary": "Get signature envelope",
+          "responseClass": "SignatureEnvelopeResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelope?name={name}&templateId={templateId}&envelopeId={envelopeId}",
+      "operations": [
+        {
+          "nickname": "CreateSignatureEnvelope",
+          "summary": "Create signature envelope",
+          "responseClass": "SignatureEnvelopeResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "Envelope name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the new envelope",
+              "dataType": "SignatureEnvelopeSettings",
+              "required": false,
+              "paramType": "body"
+            },
+            {
+              "name": "envelopeGuid",
+              "description": "A envelopeGuid of the envelope which will be used to created the new envelope",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "templateGuid",
+              "description": "A templateGuid of the template which will be used to created the new envelope",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureEnvelope",
+          "summary": "Modify signature envelope",
+          "responseClass": "SignatureEnvelopeResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the envelope",
+              "dataType": "SignatureEnvelopeSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}?name={name}",
+      "operations": [
+        {
+          "nickname": "RenameSignatureEnvelope",
+          "summary": "Rename signature envelope",
+          "responseClass": "SignatureEnvelopeResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "New envelope name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureEnvelope",
+          "summary": "Delete signature envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/roles?id={roleId}",
+      "operations": [
+        {
+          "nickname": "GetRolesList",
+          "summary": "Get signature roles",
+          "responseClass": "SignatureRolesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "id",
+              "description": "Filter roles by id",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/fields?id={fieldId}",
+      "operations": [
+        {
+          "nickname": "GetFieldsList",
+          "summary": "Get signature fields",
+          "responseClass": "SignatureFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "id",
+              "description": "Filter fields by id",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/field",
+      "operations": [
+        {
+          "nickname": "CreateSignatureField",
+          "summary": "Create signature field",
+          "responseClass": "SignatureFieldResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the new field",
+              "dataType": "SignatureFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/fields/{fieldId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureField",
+          "summary": "Modify signature field",
+          "responseClass": "SignatureFieldResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the field",
+              "dataType": "SignatureFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/fields/{fieldId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureField",
+          "summary": "Delete signature field",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipient?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}&role={roleId}&order={order}",
+      "operations": [
+        {
+          "nickname": "AddSignatureEnvelopeRecipient",
+          "summary": "Add signature envelope recipient",
+          "responseClass": "SignatureEnvelopeRecipientResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "order",
+              "description": "Recipient order",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "lastname",
+              "description": "Recipient last name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "email",
+              "description": "Recipient email",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "envelopeid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "firstname",
+              "description": "Recipient first name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "role",
+              "description": "Recipient role id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipients",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopeRecipients",
+          "summary": "Get signature envelope recipients",
+          "responseClass": "SignatureEnvelopeRecipientsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipients/{recipientId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureEnvelopeRecipient",
+          "summary": "Delete signature envelope recipient",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}&role={roleId}&order={order}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureEnvelopeRecipient",
+          "summary": "Modify signature envelope recipient",
+          "responseClass": "SignatureEnvelopeRecipientResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "order",
+              "description": "Recipient order",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "envelopeid",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "email",
+              "description": "Recipient email",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "firstname",
+              "description": "Recipient first name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "lastname",
+              "description": "Recipient last name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "role",
+              "description": "Recipient role id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/document/{documentId}?order={order}",
+      "operations": [
+        {
+          "nickname": "AddSignatureEnvelopeDocument",
+          "summary": "Add document in envelope",
+          "responseClass": "SignatureEnvelopeDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "order",
+              "description": "Document order",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopeDocuments",
+          "summary": "Get documents in envelope",
+          "responseClass": "SignatureEnvelopeDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/document/{documentId}",
+      "operations": [
+        {
+          "nickname": "GetSignedEnvelopeDocument",
+          "summary": "Get signed envelope document",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/get",
+      "operations": [
+        {
+          "nickname": "GetSignedEnvelopeDocuments",
+          "summary": "Get signed envelope documents",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureEnvelopeDocument",
+          "summary": "Delete document from envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/recipient/{recipientId}/field/{fieldId}",
+      "operations": [
+        {
+          "nickname": "AddSignatureEnvelopeField",
+          "summary": "Add signature field for document in envelope",
+          "responseClass": "SignatureEnvelopeFieldsResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldSettings",
+              "description": "Settings of the field",
+              "dataType": "SignatureEnvelopeFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/fields?document={documentId}&recipient={recipientId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureEnvelopeFields",
+          "summary": "Get signature field for document in envelope per recipient",
+          "responseClass": "SignatureEnvelopeFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/fields/{fieldId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureEnvelopeField",
+          "summary": "Delete signature envelope field",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/field/{fieldId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureEnvelopeField",
+          "summary": "Modify signature envelope field",
+          "responseClass": "SignatureEnvelopeFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the field",
+              "dataType": "SignatureEnvelopeFieldSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/archive",
+      "operations": [
+        {
+          "nickname": "ArchiveSignatureEnvelope",
+          "summary": "Archive envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/restart",
+      "operations": [
+        {
+          "nickname": "RestartExpiredSignatureEnvelope",
+          "summary": "Restart expired envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/send",
+      "operations": [
+        {
+          "nickname": "SignatureEnvelopeSend",
+          "summary": "Send envelope",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/fields/{fieldId}/locations/{locationId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureEnvelopeFieldLocation",
+          "summary": "Remove signature envelope field location",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "locationId",
+              "description": "Field location GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/recipient/{recipientId}/fields/{fieldId}/locations/{locationId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureEnvelopeFieldLocation",
+          "summary": "Modify signature envelope field location",
+          "responseClass": "SignatureEnvelopeFieldResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "envelopeId",
+              "description": "Envelope GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fieldId",
+              "description": "Field GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "locationId",
+              "description": "Field location GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the field location",
+              "dataType": "SignatureEnvelopeFieldLocationSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates?records={count}&page={page}&documentGuid={documentGuid}&recipientName={recipientName}&name={name}",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplates",
+          "summary": "Get templates",
+          "responseClass": "SignatureTemplatesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "page",
+              "description": "Page number",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "documentGuid",
+              "description": "Fitler templates by document originalMD5",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "recipientName",
+              "description": "Filter templates by recipient nickname",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "name",
+              "description": "Filter templates by signatureTemplate name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "records",
+              "description": "Records count",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplate",
+          "summary": "Get template",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/template?name={name}&templateId={templateId}&envelopeId={envelopeId}",
+      "operations": [
+        {
+          "nickname": "CreateSignatureTemplate",
+          "summary": "Create template",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "Template name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID of the template that will be used to create the new template",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the template",
+              "dataType": "SignatureTemplateSettings",
+              "required": false,
+              "paramType": "body"
+            },
+            {
+              "name": "envelopetId",
+              "description": "Envelope GUID of the envelope that will be used to create the new template",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureTemplate",
+          "summary": "Modify template",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "settings",
+              "description": "Settings of the template",
+              "dataType": "SignatureTemplateSettings",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}?name={name}",
+      "operations": [
+        {
+          "nickname": "RenameSignatureTemplate",
+          "summary": "Rename template",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "name",
+              "description": "New template name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureTemplate",
+          "summary": "Delete template",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/recipient?nickname={nickname}&role={roleId}&order={order}",
+      "operations": [
+        {
+          "nickname": "AddSignatureTemplateRecipient",
+          "summary": "Add recipient to the template",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "nickname",
+              "description": "Nickname of the recipient",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "order",
+              "description": "Display order of the recipient",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "role",
+              "description": "Role GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/recipients",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplateRecipients",
+          "summary": "Get template recipients",
+          "responseClass": "SignatureTemplateRecipientsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/recipients/{recipientId}",
+      "operations": [
+        {
+          "nickname": "DeleteSignatureTemplateRecipient",
+          "summary": "Remove recipient from template",
+          "responseClass": "SignatureStatusResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "recipientId",
+              "description": "Recipient GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/recipient/{recipientId}?nickname={nickname}&role={roleId}&order={order}",
+      "operations": [
+        {
+          "nickname": "ModifySignatureTemplateRecipient",
+          "summary": "Update template recipient",
+          "responseClass": "SignatureTemplateResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "nickname",
+              "description": "Nickname of the recipient",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            },
+            {
+              "name": "order",
+              "description": "Display order of the recipient",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "role",
+              "description": "Role GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/document/{documentId}?order={order}",
+      "operations": [
+        {
+          "nickname": "AddSignatureTemplateDocument",
+          "summary": "Add document to template",
+          "responseClass": "SignatureTemplateDocumentResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "order",
+              "description": "Display order of the document",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/signature/{userId}/templates/{templateId}/documents",
+      "operations": [
+        {
+          "nickname": "GetSignatureTemplateDocuments",
+          "summary": "Get documents in template",
+          "responseClass": "SignatureTemplateDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "templateId",
+              "description": "Template GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "SignatureStatusResponse": {
+      "id": "SignatureStatusResponse",
+      "properties": {
+        "result": {
+          "type": "Result"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "Result": {
+      "id": "Result",
+      "properties": {}
+    },
+    "SignatureTemplateFieldResponse": {
+      "id": "SignatureTemplateFieldResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateFieldResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateFieldResult": {
+      "id": "SignatureTemplateFieldResult",
+      "properties": {
+        "templateId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "field": {
+          "type": "SignatureTemplateFieldInfo"
+        }
+      }
+    },
+    "SignatureTemplateFieldInfo": {
+      "id": "SignatureTemplateFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "input": {
+          "type": "double"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "double"
+        },
+        "graphSizeW": {
+          "type": "int"
+        },
+        "graphSizeH": {
+          "type": "int"
+        },
+        "textRows": {
+          "type": "double"
+        },
+        "textColumns": {
+          "type": "double"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "signatureFieldId": {
+          "type": "double"
+        },
+        "locations": {
+          "items":{
+            "$ref":"SignatureTemplateFieldLocationInfo"
+          },
+          "type": "List"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateFieldLocationInfo": {
+      "id": "SignatureTemplateFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureTemplateFieldSettings": {
+      "id": "SignatureTemplateFieldSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "int"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "forceNewField": {
+          "type": "boolean"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateFieldLocationSettings": {
+      "id": "SignatureTemplateFieldLocationSettings",
+      "properties": {
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "forceNewField": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureTemplateFieldsResponse": {
+      "id": "SignatureTemplateFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateFieldsResult": {
+      "id": "SignatureTemplateFieldsResult",
+      "properties": {
+        "templateId": {
+          "type": "string"
+        },
+        "fields": {
+          "items":{
+            "$ref":"SignatureTemplateFieldInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateResponse": {
+      "id": "SignatureTemplateResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateResult": {
+      "id": "SignatureTemplateResult",
+      "properties": {
+        "template": {
+          "type": "SignatureTemplateInfo"
+        }
+      }
+    },
+    "SignatureTemplateInfo": {
+      "id": "SignatureTemplateInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "double"
+        },
+        "ownerGuid": {
+          "type": "string"
+        },
+        "reminderTime": {
+          "type": "double"
+        },
+        "stepExpireTime": {
+          "type": "double"
+        },
+        "templateExpireTime": {
+          "type": "double"
+        },
+        "ownerShouldSign": {
+          "type": "boolean"
+        },
+        "orderedSignature": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "emailBody": {
+          "type": "string"
+        },
+        "documentsCount": {
+          "type": "double"
+        },
+        "documentsPages": {
+          "type": "double"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureTemplateRecipientInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateRecipientInfo": {
+      "id": "SignatureTemplateRecipientInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "roleId": {
+          "type": "double"
+        }
+      }
+    },
+    "SignatureSignaturesResponse": {
+      "id": "SignatureSignaturesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureSignaturesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureSignaturesResult": {
+      "id": "SignatureSignaturesResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "signatures": {
+          "items":{
+            "$ref":"SignatureSignatureInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureSignatureInfo": {
+      "id": "SignatureSignatureInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userGuid": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "textInitials": {
+          "type": "string"
+        },
+        "signatureImageFileId": {
+          "type": "double"
+        },
+        "initialsImageFileId": {
+          "type": "double"
+        },
+        "signatureImageUrl": {
+          "type": "string"
+        },
+        "initialsImageUrl": {
+          "type": "string"
+        },
+        "createdTimeStamp": {
+          "type": "Date"
+        }
+      }
+    },
+    "SignatureSignatureResponse": {
+      "id": "SignatureSignatureResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureSignatureResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureSignatureResult": {
+      "id": "SignatureSignatureResult",
+      "properties": {
+        "signature": {
+          "type": "SignatureSignatureInfo"
+        }
+      }
+    },
+    "SignatureSignatureSettings": {
+      "id": "SignatureSignatureSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "textInitials": {
+          "type": "string"
+        },
+        "signatureData": {
+          "type": "string"
+        },
+        "initialsData": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldResponse": {
+      "id": "SignatureEnvelopeFieldResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeFieldResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldResult": {
+      "id": "SignatureEnvelopeFieldResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "field": {
+          "type": "SignatureEnvelopeFieldInfo"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldInfo": {
+      "id": "SignatureEnvelopeFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "envelopeId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "double"
+        },
+        "graphSizeW": {
+          "type": "int"
+        },
+        "graphSizeH": {
+          "type": "int"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "getDataFrom": {
+          "type": "string"
+        },
+        "data": {
+          "items":{
+            "type":"int"
+          },
+          "type": "List"
+        },
+        "fillTimeStamp": {
+          "type": "string"
+        },
+        "signatureFieldId": {
+          "type": "double"
+        },
+        "locations": {
+          "items":{
+            "$ref":"SignatureEnvelopeFieldLocationInfo"
+          },
+          "type": "List"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldLocationInfo": {
+      "id": "SignatureEnvelopeFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureContactResponse": {
+      "id": "SignatureContactResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureContactResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureContactResult": {
+      "id": "SignatureContactResult",
+      "properties": {
+        "contact": {
+          "type": "SignatureContactInfo"
+        }
+      }
+    },
+    "SignatureContactInfo": {
+      "id": "SignatureContactInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureContactSettings": {
+      "id": "SignatureContactSettings",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureContactsResponse": {
+      "id": "SignatureContactsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureContactsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureContactsResult": {
+      "id": "SignatureContactsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "contacts": {
+          "items":{
+            "$ref":"SignatureContactInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureContactsImportResponse": {
+      "id": "SignatureContactsImportResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureContactsImportResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureContactsImportResult": {
+      "id": "SignatureContactsImportResult",
+      "properties": {
+        "imported": {
+          "type": "string"
+        },
+        "ignored": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeResourcesResponse": {
+      "id": "SignatureEnvelopeResourcesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeResourcesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeResourcesResult": {
+      "id": "SignatureEnvelopeResourcesResult",
+      "properties": {
+        "documents": {
+          "items":{
+            "$ref":"SignatureEnvelopeDocumentInfo"
+          },
+          "type": "List"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureEnvelopeRecipientInfo"
+          },
+          "type": "List"
+        },
+        "dates": {
+          "items":{
+            "type":"string"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentInfo": {
+      "id": "SignatureEnvelopeDocumentInfo",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "envelopeId": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "originalDocumentMD5": {
+          "type": "string"
+        },
+        "finalDocumentMD5": {
+          "type": "string"
+        },
+        "originalDocumentPagesCount": {
+          "type": "int"
+        },
+        "fieldsCount": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientInfo": {
+      "id": "SignatureEnvelopeRecipientInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "double"
+        },
+        "userGuid": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "roleId": {
+          "type": "double"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusMessage": {
+          "type": "string"
+        },
+        "statusDateTime": {
+          "type": "Date"
+        },
+        "delegatedRecipientId": {
+          "type": "double"
+        },
+        "signatureFingerprint": {
+          "type": "string"
+        },
+        "signatureHost": {
+          "type": "string"
+        },
+        "signatureLocation": {
+          "type": "string"
+        },
+        "signatureBrowser": {
+          "type": "string"
+        }
+      }
+    },
+    "SignaturePredefinedListsResponse": {
+      "id": "SignaturePredefinedListsResponse",
+      "properties": {
+        "result": {
+          "type": "SignaturePredefinedListsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignaturePredefinedListsResult": {
+      "id": "SignaturePredefinedListsResult",
+      "properties": {
+        "lists": {
+          "items":{
+            "$ref":"SignaturePredefinedListInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignaturePredefinedListInfo": {
+      "id": "SignaturePredefinedListInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "values": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        }
+      }
+    },
+    "SignaturePredefinedListResponse": {
+      "id": "SignaturePredefinedListResponse",
+      "properties": {
+        "result": {
+          "type": "SignaturePredefinedListResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignaturePredefinedListResult": {
+      "id": "SignaturePredefinedListResult",
+      "properties": {
+        "list": {
+          "type": "SignaturePredefinedListInfo"
+        }
+      }
+    },
+    "SignaturePredefinedListSettings": {
+      "id": "SignaturePredefinedListSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "values": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeAuditLogsResponse": {
+      "id": "SignatureEnvelopeAuditLogsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeAuditLogsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeAuditLogsResult": {
+      "id": "SignatureEnvelopeAuditLogsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "logs": {
+          "items":{
+            "$ref":"SignatureEnvelopeAuditLogInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeAuditLogInfo": {
+      "id": "SignatureEnvelopeAuditLogInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "remoteAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormResponse": {
+      "id": "SignatureFormResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormResult": {
+      "id": "SignatureFormResult",
+      "properties": {
+        "form": {
+          "type": "SignatureFormInfo"
+        }
+      }
+    },
+    "SignatureFormInfo": {
+      "id": "SignatureFormInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownerGuid": {
+          "type": "string"
+        },
+        "templateGuid": {
+          "type": "string"
+        },
+        "createdTimeStamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusDateTime": {
+          "type": "string"
+        },
+        "documentsCount": {
+          "type": "double"
+        },
+        "documentsPages": {
+          "type": "double"
+        },
+        "participantsCount": {
+          "type": "double"
+        },
+        "fieldsInFinalFileName": {
+          "items":{
+            "type":"string"
+          },
+          "type": "List"
+        },
+        "canParticipantDownloadForm": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureEnvelopeSettings": {
+      "id": "SignatureEnvelopeSettings",
+      "properties": {
+        "ownerShouldSign": {
+          "type": "int"
+        },
+        "orderedSignature": {
+          "type": "int"
+        },
+        "reminderTime": {
+          "type": "double"
+        },
+        "stepExpireTime": {
+          "type": "double"
+        },
+        "envelopeExpireTime": {
+          "type": "double"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "emailBody": {
+          "type": "string"
+        },
+        "isDemo": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureFormDocumentsResponse": {
+      "id": "SignatureFormDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormDocumentsResult": {
+      "id": "SignatureFormDocumentsResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "documents": {
+          "items":{
+            "$ref":"SignatureFormDocumentInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureFormDocumentInfo": {
+      "id": "SignatureFormDocumentInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "formGuid": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "originalDocumentGuid": {
+          "type": "string"
+        },
+        "originalDocumentMD5": {
+          "type": "string"
+        },
+        "assignedDateTime": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureFormFieldsResponse": {
+      "id": "SignatureFormFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormFieldsResult": {
+      "id": "SignatureFormFieldsResult",
+      "properties": {
+        "formId": {
+          "type": "string"
+        },
+        "fields": {
+          "items":{
+            "$ref":"SignatureFormFieldInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureFormFieldInfo": {
+      "id": "SignatureFormFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "formGuid": {
+          "type": "string"
+        },
+        "participantGuid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "data": {
+          "items":{
+            "type":"int"
+          },
+          "type": "List"
+        },
+        "fillTimeStamp": {
+          "type": "string"
+        },
+        "locations": {
+          "items":{
+            "$ref":"SignatureFormFieldLocationInfo"
+          },
+          "type": "List"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormFieldLocationInfo": {
+      "id": "SignatureFormFieldLocationInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "fieldGuid": {
+          "type": "string"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureFormsResponse": {
+      "id": "SignatureFormsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormsResult": {
+      "id": "SignatureFormsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "forms": {
+          "items":{
+            "$ref":"SignatureFormInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureFormSettings": {
+      "id": "SignatureFormSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "templateGuid": {
+          "type": "string"
+        },
+        "fieldsInFinalFileName": {
+          "type": "string"
+        },
+        "canParticipantDownloadForm": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureFormResourcesResponse": {
+      "id": "SignatureFormResourcesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFormResourcesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFormResourcesResult": {
+      "id": "SignatureFormResourcesResult",
+      "properties": {
+        "documents": {
+          "items":{
+            "$ref":"SignatureFormDocumentInfo"
+          },
+          "type": "List"
+        },
+        "dates": {
+          "items":{
+            "type":"string"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateResourcesResponse": {
+      "id": "SignatureTemplateResourcesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateResourcesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateResourcesResult": {
+      "id": "SignatureTemplateResourcesResult",
+      "properties": {
+        "documents": {
+          "items":{
+            "$ref":"SignatureTemplateDocumentInfo"
+          },
+          "type": "List"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureTemplateRecipientInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateDocumentInfo": {
+      "id": "SignatureTemplateDocumentInfo",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "order": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "originalDocumentMD5": {
+          "type": "string"
+        },
+        "originalDocumentPagesCount": {
+          "type": "int"
+        },
+        "fieldsCount": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureSignDocumentResponse": {
+      "id": "SignatureSignDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureSignDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureSignDocumentResult": {
+      "id": "SignatureSignDocumentResult",
+      "properties": {
+        "documentId": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureSignDocumentSettings": {
+      "id": "SignatureSignDocumentSettings",
+      "properties": {
+        "documents": {
+          "items":{
+            "$ref":"SignatureSignDocumentDocumentSettings"
+          },
+          "type": "List"
+        },
+        "signers": {
+          "items":{
+            "$ref":"SignatureSignDocumentSignerSettings"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureSignDocumentDocumentSettings": {
+      "id": "SignatureSignDocumentDocumentSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureSignDocumentSignerSettings": {
+      "id": "SignatureSignDocumentSignerSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "top": {
+          "type": "double"
+        },
+        "left": {
+          "type": "double"
+        },
+        "width": {
+          "type": "double"
+        },
+        "height": {
+          "type": "double"
+        },
+        "placeSingatureOn": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopesResponse": {
+      "id": "SignatureEnvelopesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopesResult": {
+      "id": "SignatureEnvelopesResult",
+      "properties": {
+        "envelopesCount": {
+          "type": "int"
+        },
+        "envelopes": {
+          "items":{
+            "$ref":"SignatureEnvelopeInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeInfo": {
+      "id": "SignatureEnvelopeInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "creationDateTime": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "double"
+        },
+        "ownerGuid": {
+          "type": "string"
+        },
+        "status": {
+          "type": "int"
+        },
+        "statusDateTime": {
+          "type": "string"
+        },
+        "reminderTime": {
+          "type": "double"
+        },
+        "stepExpireTime": {
+          "type": "double"
+        },
+        "envelopeExpireTime": {
+          "type": "double"
+        },
+        "ownerShouldSign": {
+          "type": "boolean"
+        },
+        "orderedSignature": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "emailBody": {
+          "type": "string"
+        },
+        "documentsCount": {
+          "type": "double"
+        },
+        "documentsPages": {
+          "type": "double"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureEnvelopeRecipientInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeResponse": {
+      "id": "SignatureEnvelopeResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeResult": {
+      "id": "SignatureEnvelopeResult",
+      "properties": {
+        "envelope": {
+          "type": "SignatureEnvelopeInfo"
+        }
+      }
+    },
+    "SignatureRolesResponse": {
+      "id": "SignatureRolesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureRolesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureRolesResult": {
+      "id": "SignatureRolesResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "roles": {
+          "items":{
+            "$ref":"SignatureRoleInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureRoleInfo": {
+      "id": "SignatureRoleInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "canEdit": {
+          "type": "int"
+        },
+        "canSign": {
+          "type": "int"
+        },
+        "canAnnotate": {
+          "type": "int"
+        },
+        "canDelegate": {
+          "type": "int"
+        }
+      }
+    },
+    "SignatureFieldsResponse": {
+      "id": "SignatureFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFieldsResult": {
+      "id": "SignatureFieldsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "fields": {
+          "items":{
+            "$ref":"SignatureFieldInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureFieldInfo": {
+      "id": "SignatureFieldInfo",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "graphSizeW": {
+          "type": "int"
+        },
+        "graphSizeH": {
+          "type": "int"
+        },
+        "getDataFrom": {
+          "type": "string"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "isSystem": {
+          "type": "boolean"
+        },
+        "fieldType": {
+          "type": "int"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFieldResponse": {
+      "id": "SignatureFieldResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureFieldResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureFieldResult": {
+      "id": "SignatureFieldResult",
+      "properties": {
+        "field": {
+          "type": "SignatureFieldInfo"
+        }
+      }
+    },
+    "SignatureFieldSettings": {
+      "id": "SignatureFieldSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "graphSizeW": {
+          "type": "int"
+        },
+        "graphSizeH": {
+          "type": "int"
+        },
+        "getDataFrom": {
+          "type": "string"
+        },
+        "regularExpression": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientResponse": {
+      "id": "SignatureEnvelopeRecipientResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeRecipientResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientResult": {
+      "id": "SignatureEnvelopeRecipientResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "recipient": {
+          "type": "SignatureEnvelopeRecipientInfo"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientsResponse": {
+      "id": "SignatureEnvelopeRecipientsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeRecipientsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeRecipientsResult": {
+      "id": "SignatureEnvelopeRecipientsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureEnvelopeRecipientInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentResponse": {
+      "id": "SignatureEnvelopeDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentResult": {
+      "id": "SignatureEnvelopeDocumentResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "document": {
+          "type": "SignatureEnvelopeDocumentInfo"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentsResponse": {
+      "id": "SignatureEnvelopeDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeDocumentsResult": {
+      "id": "SignatureEnvelopeDocumentsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "documents": {
+          "items":{
+            "$ref":"SignatureEnvelopeDocumentInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldsResponse": {
+      "id": "SignatureEnvelopeFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureEnvelopeFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldsResult": {
+      "id": "SignatureEnvelopeFieldsResult",
+      "properties": {
+        "envelopeId": {
+          "type": "string"
+        },
+        "fields": {
+          "items":{
+            "$ref":"SignatureEnvelopeFieldInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldSettings": {
+      "id": "SignatureEnvelopeFieldSettings",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "int"
+        },
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "forceNewField": {
+          "type": "boolean"
+        },
+        "acceptableValues": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureEnvelopeFieldLocationSettings": {
+      "id": "SignatureEnvelopeFieldLocationSettings",
+      "properties": {
+        "page": {
+          "type": "int"
+        },
+        "locationX": {
+          "type": "double"
+        },
+        "locationY": {
+          "type": "double"
+        },
+        "locationWidth": {
+          "type": "double"
+        },
+        "locationHeight": {
+          "type": "double"
+        },
+        "fontName": {
+          "type": "string"
+        },
+        "fontColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "double"
+        },
+        "fontBold": {
+          "type": "boolean"
+        },
+        "fontItalic": {
+          "type": "boolean"
+        },
+        "fontUnderline": {
+          "type": "boolean"
+        },
+        "forceNewField": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SignatureTemplatesResponse": {
+      "id": "SignatureTemplatesResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplatesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplatesResult": {
+      "id": "SignatureTemplatesResult",
+      "properties": {
+        "templatesCount": {
+          "type": "int"
+        },
+        "templates": {
+          "items":{
+            "$ref":"SignatureTemplateInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateSettings": {
+      "id": "SignatureTemplateSettings",
+      "properties": {
+        "ownerShouldSign": {
+          "type": "int"
+        },
+        "orderedSignature": {
+          "type": "int"
+        },
+        "reminderTime": {
+          "type": "double"
+        },
+        "stepExpireTime": {
+          "type": "double"
+        },
+        "envelopeExpireTime": {
+          "type": "double"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "emailBody": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateRecipientsResponse": {
+      "id": "SignatureTemplateRecipientsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateRecipientsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateRecipientsResult": {
+      "id": "SignatureTemplateRecipientsResult",
+      "properties": {
+        "templateId": {
+          "type": "string"
+        },
+        "recipients": {
+          "items":{
+            "$ref":"SignatureTemplateRecipientInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SignatureTemplateDocumentResponse": {
+      "id": "SignatureTemplateDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateDocumentResult": {
+      "id": "SignatureTemplateDocumentResult",
+      "properties": {
+        "templateId": {
+          "type": "string"
+        },
+        "document": {
+          "type": "SignatureTemplateDocumentInfo"
+        }
+      }
+    },
+    "SignatureTemplateDocumentsResponse": {
+      "id": "SignatureTemplateDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "SignatureTemplateDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SignatureTemplateDocumentsResult": {
+      "id": "SignatureTemplateDocumentsResult",
+      "properties": {
+        "templateId": {
+          "type": "string"
+        },
+        "documents": {
+          "items":{
+            "$ref":"SignatureTemplateDocumentInfo"
+          },
+          "type": "List"
+        }
+      }
+    }
+  }
+}

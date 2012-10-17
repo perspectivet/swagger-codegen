@@ -1,0 +1,387 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/system/{callerId}/plan",
+      "operations": [
+        {
+          "nickname": "GetUserPlan",
+          "summary": "Get user plan",
+          "responseClass": "GetPlanResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{callerId}/subscription",
+      "operations": [
+        {
+          "nickname": "GetUserSubscriptionPlan",
+          "summary": "Get user plan",
+          "responseClass": "GetUserSubscriptionPlanResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{callerId}/plans/{family}",
+      "operations": [
+        {
+          "nickname": "GetSubscriptionPlans",
+          "summary": "Get subscription plans",
+          "responseClass": "GetSubscriptionPlansResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "family",
+              "description": "Product Family Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{userId}/subscriptions/{productId}",
+      "operations": [
+        {
+          "nickname": "SetSubscriptionPlan",
+          "summary": "Set subscription plan user plan",
+          "responseClass": "SetUserSubscriptionPlanResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "productId",
+              "description": "Product ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "subscriptionPlan",
+              "description": "Subscription Plan",
+              "dataType": "SubscriptionPlanInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{callerId}/countries",
+      "operations": [
+        {
+          "nickname": "GetCountries",
+          "summary": "Get countries",
+          "responseClass": "GetCountriesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/system/{callerId}/countries/{countryName}/states",
+      "operations": [
+        {
+          "nickname": "GetStates",
+          "summary": "Get states",
+          "responseClass": "GetStatesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "countryName",
+              "description": "Country Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "GetPlanResponse": {
+      "id": "GetPlanResponse",
+      "properties": {
+        "result": {
+          "type": "GetPlanResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetPlanResult": {
+      "id": "GetPlanResult",
+      "properties": {
+        "ref_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "GetUserSubscriptionPlanResponse": {
+      "id": "GetUserSubscriptionPlanResponse",
+      "properties": {
+        "result": {
+          "type": "GetUserSubscriptionPlanResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetUserSubscriptionPlanResult": {
+      "id": "GetUserSubscriptionPlanResult",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "billing_address": {
+          "type": "BillingAddressInfo"
+        }
+      }
+    },
+    "BillingAddressInfo": {
+      "id": "BillingAddressInfo",
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      }
+    },
+    "GetSubscriptionPlansResponse": {
+      "id": "GetSubscriptionPlansResponse",
+      "properties": {
+        "result": {
+          "type": "GetSubscriptionPlanResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetSubscriptionPlanResult": {
+      "id": "GetSubscriptionPlanResult",
+      "properties": {
+        "metrics": {
+          "type": "List[ProductMetrics]"
+        },
+        "subscription": {
+          "type": "SubscriptionPlanInfo"
+        }
+      }
+    },
+    "ProductMetrics": {
+      "id": "ProductMetrics",
+      "properties": {}
+    },
+    "DecimalMetricValue": {
+      "id": "DecimalMetricValue",
+      "properties": {}
+    },
+    "SubscriptionPlanInfo": {
+      "id": "SubscriptionPlanInfo",
+      "properties": {
+        "productId": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "userCount": {
+          "type": "int"
+        },
+        "firstNameOnCard": {
+          "type": "string"
+        },
+        "lastNameOnCard": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "expirationDate": {
+          "type": "Date"
+        },
+        "cvv": {
+          "type": "string"
+        },
+        "address": {
+          "type": "BillingAddressInfo"
+        }
+      }
+    },
+    "SetUserSubscriptionPlanResponse": {
+      "id": "SetUserSubscriptionPlanResponse",
+      "properties": {
+        "result": {
+          "type": "SetUserSubscriptionPlanResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetUserSubscriptionPlanResult": {
+      "id": "SetUserSubscriptionPlanResult",
+      "properties": {}
+    },
+    "GetCountriesResponse": {
+      "id": "GetCountriesResponse",
+      "properties": {
+        "result": {
+          "type": "GetCountriesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetCountriesResult": {
+      "id": "GetCountriesResult",
+      "properties": {
+        "countries": {
+          "type": "List[Country]"
+        }
+      }
+    },
+    "Country": {
+      "id": "Country",
+      "properties": {}
+    },
+    "GetStatesResponse": {
+      "id": "GetStatesResponse",
+      "properties": {
+        "result": {
+          "type": "GetStatesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetStatesResult": {
+      "id": "GetStatesResult",
+      "properties": {
+        "states": {
+          "type": "List[State]"
+        }
+      }
+    },
+    "State": {
+      "id": "State",
+      "properties": {}
+    }
+  }
+}

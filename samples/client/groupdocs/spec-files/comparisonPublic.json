@@ -1,0 +1,51 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/comparison",
+  "apis": [
+    {
+      "path": "/comparison/{userId}/comparison/download?resultFileId={resultFileId}&format={format}",
+      "operations": [
+        {
+          "nickname": "DownloadResult",
+          "summary": "Download comparison result file",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "resultFileId",
+              "description": "Comparison result file GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "Comparison result file format",
+              "dataType": "string",
+              "allowableValues": {
+                "values": [
+                  "docx",
+                  "doc",
+                  "pdf"
+                ],
+                "valueType": "LIST"
+              },
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {}
+}

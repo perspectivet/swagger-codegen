@@ -1,0 +1,264 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/comparison",
+  "apis": [
+    {
+      "path": "/comparison/{userId}/comparison/compare?source={sourceFileId}&target={targetFileId}",
+      "operations": [
+        {
+          "nickname": "Compare",
+          "summary": "Compare",
+          "responseClass": "CompareResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "sourceFileId",
+              "description": "Source File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "targetFileId",
+              "description": "Target File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/comparison/{userId}/comparison/changes?resultFileId={resultFileId}",
+      "operations": [
+        {
+          "nickname": "GetChanges",
+          "summary": "Get changes",
+          "responseClass": "ChangesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "resultFileId",
+              "description": "Comparison result file GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/comparison/{userId}/comparison/changes?resultFileId={resultFileId}",
+      "operations": [
+        {
+          "nickname": "UpdateChanges",
+          "summary": "Update changes",
+          "responseClass": "ChangesResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "resultFileId",
+              "description": "Comparison result file GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "changes",
+              "description": "Comparison changes to update (accept or reject)",
+              "dataType": "List[ChangeInfo]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/comparison/{userId}/comparison/document?guid={guid}",
+      "operations": [
+        {
+          "nickname": "GetDocumentDetails",
+          "summary": "Get document details",
+          "responseClass": "DocumentDetailsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "guid",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "CompareResponse": {
+      "id": "CompareResponse",
+      "properties": {
+        "result": {
+          "type": "CompareResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CompareResult": {
+      "id": "CompareResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        }
+      }
+    },
+    "ChangesResponse": {
+      "id": "ChangesResponse",
+      "properties": {
+        "result": {
+          "type": "ChangesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ChangesResult": {
+      "id": "ChangesResult",
+      "properties": {
+        "result_file_Id": {
+          "type": "string"
+        },
+        "changes": {
+          "items":{
+            "$ref":"ChangeInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "ChangeInfo": {
+      "id": "ChangeInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "type": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "page": {
+          "type": "Page"
+        },
+        "box": {
+          "type": "Rectangle"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "Page": {
+      "id": "Page",
+      "properties": {
+        "id": {
+          "type": "int"
+        },
+        "w": {
+          "type": "double"
+        },
+        "h": {
+          "type": "double"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "w": {
+          "type": "double"
+        },
+        "h": {
+          "type": "double"
+        }
+      }
+    },
+    "DocumentDetailsResponse": {
+      "id": "DocumentDetailsResponse",
+      "properties": {
+        "result": {
+          "type": "DocumentDetailsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentDetailsResult": {
+      "id": "DocumentDetailsResult",
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "supported": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

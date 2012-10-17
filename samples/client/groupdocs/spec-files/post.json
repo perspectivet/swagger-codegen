@@ -1,0 +1,193 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/post",
+  "apis": [
+    {
+      "path": "/post/file.rename?user_id={userId}&file_id={fileId}&new_name={newName}",
+      "operations": [
+        {
+          "nickname": "RenameByPost",
+          "summary": "Rename by post",
+          "responseClass": "RenameResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "newName",
+              "description": "New name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/post/file.delete?user_id={userId}&file_id={fileId}",
+      "operations": [
+        {
+          "nickname": "DeleteByPost",
+          "summary": "Delete by post",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/post/file.delete.in?user_id={userId}&path={path}",
+      "operations": [
+        {
+          "nickname": "DeleteFromFolderByPost",
+          "summary": "Delete from folder by post",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/post/file.compress?user_id={userId}&file_id={fileId}&archive_type={archiveType}",
+      "operations": [
+        {
+          "nickname": "CompressByPost",
+          "summary": "Compress by post",
+          "responseClass": "CompressResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "archiveType",
+              "description": "Archive Type",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "RenameResponse": {
+      "id": "RenameResponse",
+      "properties": {
+        "result": {
+          "type": "RenameResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "RenameResult": {
+      "id": "RenameResult",
+      "properties": {}
+    },
+    "DeleteResponse": {
+      "id": "DeleteResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteResult": {
+      "id": "DeleteResult",
+      "properties": {}
+    },
+    "CompressResponse": {
+      "id": "CompressResponse",
+      "properties": {
+        "result": {
+          "type": "CompressRequestResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CompressRequestResult": {
+      "id": "CompressRequestResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

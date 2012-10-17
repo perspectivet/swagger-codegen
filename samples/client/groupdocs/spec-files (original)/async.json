@@ -1,0 +1,918 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/async/{userId}/jobs/{jobId}?format=xml",
+      "operations": [
+        {
+          "nickname": "GetJob",
+          "summary": "Get job",
+          "responseClass": "GetJobResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job Id or Guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobId}?format=json",
+      "operations": [
+        {
+          "nickname": "GetJobJson",
+          "summary": "Get job json",
+          "responseClass": "GetJobResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobId}/documents?format={format}",
+      "operations": [
+        {
+          "nickname": "GetJobDocuments",
+          "summary": "Get job documents",
+          "responseClass": "GetJobDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id or guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "format",
+              "description": "Format",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs",
+      "operations": [
+        {
+          "nickname": "CreateJob",
+          "summary": "Create job",
+          "responseClass": "CreateJobResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "job",
+              "description": "Job",
+              "dataType": "JobInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobGuid}",
+      "operations": [
+        {
+          "nickname": "DeleteJob",
+          "summary": "Delete draft job",
+          "responseClass": "DeleteResult",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobGuid",
+              "description": "Job Guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobId}/files/{fileId}?check_ownership={checkOwnership}&out_formats={formats}",
+      "operations": [
+        {
+          "nickname": "AddJobDocument",
+          "summary": "Add job document",
+          "responseClass": "AddJobDocumentResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id or guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "checkOwnership",
+              "description": "Check Document Ownership",
+              "dataType": "boolean",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formats",
+              "description": "Formats",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobGuid}/documents/{documentId}",
+      "operations": [
+        {
+          "nickname": "DeleteJobDocument",
+          "summary": "Delete document from job",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobGuid",
+              "description": "Job Guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "documentId",
+              "description": "Document GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobId}/urls?absolute_url={absoluteUrl}&out_formats={formats}",
+      "operations": [
+        {
+          "nickname": "AddJobDocumentUrl",
+          "summary": "Add job document url",
+          "responseClass": "AddJobDocumentResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "absoluteUrl",
+              "description": "Absolute Url",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "formats",
+              "description": "Formats",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/{jobId}",
+      "operations": [
+        {
+          "nickname": "UpdateJob",
+          "summary": "Update job",
+          "responseClass": "UpdateJobResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id or Guid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "job",
+              "description": "Job",
+              "dataType": "JobInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&status={status}&actions={actions}&excluded_actions={excludedActions}",
+      "operations": [
+        {
+          "nickname": "GetJobs",
+          "summary": "Get jobs",
+          "responseClass": "GetJobsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageIndex",
+              "description": "Page Index",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "Page Size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "date",
+              "description": "Date",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "Status",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "actions",
+              "description": "Actions",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "excludedActions",
+              "description": "Excluded actions",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/jobs/documents?page={pageIndex}&count={pageSize}&actions={actions}&excluded_actions={excludedActions}&order_by={orderBy}&order_asc={orderAsc}",
+      "operations": [
+        {
+          "nickname": "GetJobsDocuments",
+          "summary": "Get jobs documents",
+          "responseClass": "GetJobsDocumentsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "pageIndex",
+              "description": "Page Index",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "Page Size",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "actions",
+              "description": "Actions",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "excludedActions",
+              "description": "Excluded actions",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "orderBy",
+              "description": "Order by",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "orderAsc",
+              "description": "Order asc",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/async/{userId}/files/{fileId}?new_type={targetType}&email_results={emailResults}&new_description={description}&print_script={printScript}&callback={callbackUrl}",
+      "operations": [
+        {
+          "nickname": "Convert",
+          "summary": "Convert",
+          "responseClass": "ConvertResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "targetType",
+              "description": "Target type",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "emailResults",
+              "description": "Email results",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "description",
+              "description": "Description",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "printScript",
+              "description": "Print",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "callbackUrl",
+              "description": "Callback url",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "GetJobResponse": {
+      "id": "GetJobResponse",
+      "properties": {
+        "result": {
+          "type": "GetJobResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetJobResult": {
+      "id": "GetJobResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "out_formats": {
+          "type": "List[string]"
+        },
+        "actions": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "email_results": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "double"
+        },
+        "url_only": {
+          "type": "boolean"
+        },
+        "documents": {
+          "type": "JobDocumentsEntry"
+        },
+        "requested_time": {
+          "type": "long"
+        },
+        "scheduled_time": {
+          "type": "long"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "callback_url": {
+          "type": "string"
+        }
+      }
+    },
+    "JobDocumentsEntry": {
+      "id": "JobDocumentsEntry",
+      "properties": {
+        "inputs": {
+          "type": "List[JobInputDocument]"
+        },
+        "outputs": {
+          "type": "List[JobOutputDocument]"
+        }
+      }
+    },
+    "JobInputDocument": {
+      "id": "JobInputDocument",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "proc_date": {
+          "type": "long"
+        },
+        "output_formats": {
+          "type": "string"
+        },
+        "outputs": {
+          "type": "List[JobOutputDocument]"
+        },
+        "job_errors": {
+          "type": "List[JobErrorInfo]"
+        },
+        "actions": {
+          "type": "string"
+        },
+        "supported_output_file_types": {
+          "type": "List`1"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "JobOutputDocument": {
+      "id": "JobOutputDocument",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "JobErrorInfo": {
+      "id": "JobErrorInfo",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        },
+        "original_document_id": {
+          "type": "double"
+        },
+        "error_code": {
+          "type": "int"
+        },
+        "expected_format": {
+          "type": "string"
+        }
+      }
+    },
+    "GetJobDocumentsResponse": {
+      "id": "GetJobDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "GetJobDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetJobDocumentsResult": {
+      "id": "GetJobDocumentsResult",
+      "properties": {
+        "job_status": {
+          "type": "string"
+        },
+        "inputs": {
+          "type": "List[JobInputDocument]"
+        },
+        "outputs": {
+          "type": "List[JobOutputDocument]"
+        }
+      }
+    },
+    "CreateJobResponse": {
+      "id": "CreateJobResponse",
+      "properties": {
+        "result": {
+          "type": "CreateJobResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateJobResult": {
+      "id": "CreateJobResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        },
+        "job_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "JobInfo": {
+      "id": "JobInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "out_formats": {
+          "type": "List[string]"
+        },
+        "actions": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "email_results": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "double"
+        },
+        "url_only": {
+          "type": "boolean"
+        },
+        "documents": {
+          "type": "JobDocumentsEntry"
+        },
+        "requested_time": {
+          "type": "long"
+        },
+        "scheduled_time": {
+          "type": "long"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "callback_url": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteResult": {
+      "id": "DeleteResult",
+      "properties": {}
+    },
+    "AddJobDocumentResponse": {
+      "id": "AddJobDocumentResponse",
+      "properties": {
+        "result": {
+          "type": "AddJobDocumentResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddJobDocumentResult": {
+      "id": "AddJobDocumentResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        }
+      }
+    },
+    "DeleteResponse": {
+      "id": "DeleteResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateJobResponse": {
+      "id": "UpdateJobResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateJobResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateJobResult": {
+      "id": "UpdateJobResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetJobsResponse": {
+      "id": "GetJobsResponse",
+      "properties": {
+        "result": {
+          "type": "GetJobsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetJobsResult": {
+      "id": "GetJobsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "jobs": {
+          "type": "List[JobInfo]"
+        }
+      }
+    },
+    "GetJobsDocumentsResponse": {
+      "id": "GetJobsDocumentsResponse",
+      "properties": {
+        "result": {
+          "type": "GetJobsDocumentsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetJobsDocumentsResult": {
+      "id": "GetJobsDocumentsResult",
+      "properties": {
+        "count": {
+          "type": "int"
+        },
+        "entries": {
+          "type": "List[JobDocumentsEntry]"
+        }
+      }
+    },
+    "ConvertResponse": {
+      "id": "ConvertResponse",
+      "properties": {
+        "result": {
+          "type": "ConvertRequestResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ConvertRequestResult": {
+      "id": "ConvertRequestResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        }
+      }
+    }
+  }
+}

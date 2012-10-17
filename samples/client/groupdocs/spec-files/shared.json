@@ -1,0 +1,83 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/shared",
+  "apis": [
+    {
+      "path": "/shared/files/{guid}?filename={fileName}&render={render}",
+      "operations": [
+        {
+          "nickname": "Download",
+          "summary": "Download",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "guid",
+              "description": "GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileName",
+              "description": "File name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "render",
+              "description": "Render",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/files/{guid}/xml",
+      "operations": [
+        {
+          "nickname": "GetXml",
+          "summary": "Get xml",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "guid",
+              "description": "GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/shared/packages/{*path}",
+      "operations": [
+        {
+          "nickname": "GetPackage",
+          "summary": "Get package",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {}
+}

@@ -1,0 +1,1051 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/storage",
+  "apis": [
+    {
+      "path": "/storage/{userId}",
+      "operations": [
+        {
+          "nickname": "GetStorageInfo",
+          "summary": "Get storage info",
+          "responseClass": "StorageInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/folders/{*path}?page={pageIndex}&count={pageSize}&order_by={orderBy}&order_asc={orderAsc}&filter={filter}&file_types={fileTypes}&extended={extended}",
+      "operations": [
+        {
+          "nickname": "ListEntities",
+          "summary": "List entities",
+          "responseClass": "ListEntitiesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageIndex",
+              "description": "Page Index",
+              "dataType": "int",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "pageSize",
+              "description": "Page Size",
+              "dataType": "int",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "orderBy",
+              "description": "Order By",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "orderAsc",
+              "description": "Order Asc",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "filter",
+              "description": "Filter",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "fileTypes",
+              "description": "File Types",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "extended",
+              "description": "Indicates whether an extended information should be returned",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/files/{fileId}",
+      "operations": [
+        {
+          "nickname": "GetFile",
+          "summary": "Get file",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/shared/{userEmail}/{*filePath}",
+      "operations": [
+        {
+          "nickname": "GetSharedFile",
+          "summary": "Get shared file",
+          "responseClass": "string",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userEmail",
+              "description": "User Email",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "filePath",
+              "description": "File path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/folders/{*path}?description={description}",
+      "operations": [
+        {
+          "nickname": "Upload",
+          "summary": "Upload",
+          "responseClass": "UploadResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "description",
+              "description": "Description",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "stream",
+              "description": "Stream",
+              "dataType": "stream",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/urls?url={url}",
+      "operations": [
+        {
+          "nickname": "UploadWeb",
+          "summary": "Upload Web",
+          "responseClass": "UploadResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "url",
+              "description": "Url",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/google/files/{*path}?file_id={fileId}",
+      "operations": [
+        {
+          "nickname": "UploadGoogle",
+          "summary": "Upload Google",
+          "responseClass": "UploadResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "File path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File unique identifier",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/files/{fileId}",
+      "operations": [
+        {
+          "nickname": "Delete",
+          "summary": "Delete",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/folders/{*path}",
+      "operations": [
+        {
+          "nickname": "DeleteFromFolder",
+          "summary": "Delete from folder",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/files/{*path}",
+      "operations": [
+        {
+          "nickname": "MoveFile",
+          "summary": "Move file",
+          "responseClass": "FileMoveResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "mode",
+              "description": "Mode",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "Groupdocs-Move",
+              "description": "File ID (move)",
+              "dataType": "string",
+              "required": false,
+              "paramType": "header"
+            },
+            {
+              "name": "Groupdocs-Copy",
+              "description": "File ID (copy)",
+              "dataType": "string",
+              "required": false,
+              "paramType": "header"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/folders/{*path}?override_mode={mode}",
+      "operations": [
+        {
+          "nickname": "MoveFolder",
+          "summary": "Move folder",
+          "responseClass": "FolderMoveResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Destination Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "mode",
+              "description": "Mode",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "Groupdocs-Copy",
+              "description": "Source path (copy)",
+              "dataType": "string",
+              "required": false,
+              "paramType": "header"
+            },
+            {
+              "name": "Groupdocs-Move",
+              "description": "Source path (move)",
+              "dataType": "string",
+              "required": false,
+              "paramType": "header"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/paths/{*path}",
+      "operations": [
+        {
+          "nickname": "Create",
+          "summary": "Create",
+          "responseClass": "CreateFolderResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/files/{fileId}/archive/{archiveType}",
+      "operations": [
+        {
+          "nickname": "Compress",
+          "summary": "Compress",
+          "responseClass": "CompressResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "archiveType",
+              "description": "Archive type",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/packages/{packageName}?storeRelativePath={storeRelativePath}",
+      "operations": [
+        {
+          "nickname": "CreatePackage",
+          "summary": "Create Package",
+          "responseClass": "CreatePackageResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "packageName",
+              "description": "Package Name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "storeRelativePath",
+              "description": "Store files using relative paths",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "paths",
+              "description": "Paths",
+              "dataType": "List[string]",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/trash/{*path}",
+      "operations": [
+        {
+          "nickname": "MoveToTrash",
+          "summary": "Move to trash",
+          "responseClass": "FolderMoveResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/storage/{userId}/trash/{*path}",
+      "operations": [
+        {
+          "nickname": "RestoreFromTrash",
+          "summary": "Restore from trash",
+          "responseClass": "DeleteResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "path",
+              "description": "Path",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "StorageInfoResponse": {
+      "id": "StorageInfoResponse",
+      "properties": {
+        "result": {
+          "type": "StorageInfoResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "StorageInfoResult": {
+      "id": "StorageInfoResult",
+      "properties": {
+        "total_space": {
+          "type": "long"
+        },
+        "avail_space": {
+          "type": "long"
+        },
+        "doc_credits": {
+          "type": "int"
+        },
+        "avail_credits": {
+          "type": "int"
+        }
+      }
+    },
+    "ListEntitiesResponse": {
+      "id": "ListEntitiesResponse",
+      "properties": {
+        "result": {
+          "type": "ListEntitiesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ListEntitiesResult": {
+      "id": "ListEntitiesResult",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "count": {
+          "type": "int"
+        },
+        "folders": {
+          "items":{
+            "$ref":"FileSystemFolder"
+          },
+          "type": "List"
+        },
+        "files": {
+          "items":{
+            "$ref":"FileSystemDocument"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "FileSystemFolder": {
+      "id": "FileSystemFolder",
+      "properties": {
+        "folder_count": {
+          "type": "int"
+        },
+        "file_count": {
+          "type": "int"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "UserInfo"
+        },
+        "sharers": {
+          "items":{
+            "$ref":"UserInfo"
+          },
+          "type": "List"
+        },
+        "dir": {
+          "type": "boolean"
+        },
+        "modified_on": {
+          "type": "long"
+        },
+        "created_on": {
+          "type": "long"
+        }
+      }
+    },
+    "UserInfo": {
+      "id": "UserInfo",
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "pkey": {
+          "type": "string"
+        },
+        "pswd_salt": {
+          "type": "string"
+        },
+        "claimed_id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "int"
+        },
+        "photo": {
+          "items":{
+            "type":"int"
+          },
+          "type": "List"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "news_eanbled": {
+          "type": "boolean"
+        },
+        "alerts_eanbled": {
+          "type": "boolean"
+        },
+        "support_eanbled": {
+          "type": "boolean"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "signedupOn": {
+          "type": "long"
+        },
+        "signedinOn": {
+          "type": "long"
+        },
+        "signin_count": {
+          "type": "int"
+        },
+        "roles": {
+          "items":{
+            "$ref":"RoleInfo"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleInfo": {
+      "id": "RoleInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "FileSystemDocument": {
+      "id": "FileSystemDocument",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "type": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "size": {
+          "type": "long"
+        },
+        "thumbnail": {
+          "type": "string"
+        },
+        "supported_types": {
+          "items":{
+            "type":"string"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "UserInfo"
+        },
+        "sharers": {
+          "items":{
+            "$ref":"UserInfo"
+          },
+          "type": "List"
+        },
+        "dir": {
+          "type": "boolean"
+        },
+        "modified_on": {
+          "type": "long"
+        },
+        "created_on": {
+          "type": "long"
+        }
+      }
+    },
+    "UploadResponse": {
+      "id": "UploadResponse",
+      "properties": {
+        "result": {
+          "type": "UploadRequestResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UploadRequestResult": {
+      "id": "UploadRequestResult",
+      "properties": {
+        "adj_name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "size": {
+          "type": "long"
+        },
+        "version": {
+          "type": "int"
+        },
+        "thumbnail": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteResponse": {
+      "id": "DeleteResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteResult": {
+      "id": "DeleteResult",
+      "properties": {}
+    },
+    "FileMoveResponse": {
+      "id": "FileMoveResponse",
+      "properties": {
+        "result": {
+          "type": "FileMoveResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "FileMoveResult": {
+      "id": "FileMoveResult",
+      "properties": {
+        "src_file": {
+          "type": "DocumentInfo"
+        },
+        "dst_file": {
+          "type": "DocumentInfo"
+        }
+      }
+    },
+    "DocumentInfo": {
+      "id": "DocumentInfo",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "int"
+        },
+        "size": {
+          "type": "long"
+        },
+        "type": {
+          "type": "string"
+        },
+        "type_str": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "file_type_str": {
+          "type": "string"
+        },
+        "document_path": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "FolderMoveResponse": {
+      "id": "FolderMoveResponse",
+      "properties": {
+        "result": {
+          "type": "FolderMoveResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "FolderMoveResult": {
+      "id": "FolderMoveResult",
+      "properties": {
+        "from_path": {
+          "type": "string"
+        },
+        "to_path": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateFolderResponse": {
+      "id": "CreateFolderResponse",
+      "properties": {
+        "result": {
+          "type": "CreateFolderResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateFolderResult": {
+      "id": "CreateFolderResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "CompressResponse": {
+      "id": "CompressResponse",
+      "properties": {
+        "result": {
+          "type": "CompressRequestResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CompressRequestResult": {
+      "id": "CompressRequestResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "CreatePackageResponse": {
+      "id": "CreatePackageResponse",
+      "properties": {
+        "result": {
+          "type": "CreatePackageResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreatePackageResult": {
+      "id": "CreatePackageResult",
+      "properties": {
+        "url": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

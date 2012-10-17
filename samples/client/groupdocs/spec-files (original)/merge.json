@@ -1,0 +1,1950 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/merge/{userId}/jobs/{jobId}/files/{fileId}/datasources/{datasourceId}",
+      "operations": [
+        {
+          "nickname": "AddJobDocumentDataSource",
+          "summary": "Add job document datasource",
+          "responseClass": "AddDocumentDataSourceResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job indetifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File indetifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource indetifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/jobs/{jobId}/files/{fileId}/datasources",
+      "operations": [
+        {
+          "nickname": "AddJobDocumentDataSourceFields",
+          "summary": "Add job document datasource fields",
+          "responseClass": "AddDocumentDataSourceResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "jobId",
+              "description": "Job id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Fields",
+              "dataType": "List[DatasourceField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}",
+      "operations": [
+        {
+          "nickname": "FillQuestionnaire",
+          "summary": "Merge datasource",
+          "responseClass": "MergeTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Collector global unique identifier to fill",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "targetType",
+              "description": "Filled document type",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "emailResults",
+              "description": "Email results",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}",
+      "operations": [
+        {
+          "nickname": "MergeDatasource",
+          "summary": "Merge datasource",
+          "responseClass": "MergeTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "targetType",
+              "description": "Target type",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "emailResults",
+              "description": "Email results",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/datasources?new_type={targetType}&email_results={emailResults}&assembly_name={assemblyName}",
+      "operations": [
+        {
+          "nickname": "MergeDatasourceFields",
+          "summary": "Merge datasource fields",
+          "responseClass": "MergeTemplateResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "targetType",
+              "description": "Target type",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "emailResults",
+              "description": "Email results",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "assemblyName",
+              "description": "Assembly name",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Fields",
+              "dataType": "List[DatasourceField]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaire",
+          "summary": "Get questionnaire",
+          "responseClass": "GetQuestionnaireResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires?status={status}&page_number={pageNumber}&page_size={pageSize}",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaires",
+          "summary": "Get questionnaires",
+          "responseClass": "GetQuestionnairesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "Questionnaire status to filter by",
+              "dataType": "string",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageNumber",
+              "description": "Page number to return questionnaires on",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            },
+            {
+              "name": "pageSize",
+              "description": "Number of questionnaires to return",
+              "dataType": "int",
+              "required": false,
+              "paramType": "query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires",
+      "operations": [
+        {
+          "nickname": "CreateQuestionnaire",
+          "summary": "Create questionnaire",
+          "responseClass": "CreateQuestionnaireResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaire",
+              "description": "Questionnaire",
+              "dataType": "QuestionnaireInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}",
+      "operations": [
+        {
+          "nickname": "UpdateQuestionnaire",
+          "summary": "Update questionnaire",
+          "responseClass": "UpdateQuestionnaireResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaire",
+              "description": "Questionnaire",
+              "dataType": "QuestionnaireInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}",
+      "operations": [
+        {
+          "nickname": "DeleteQuestionnaire",
+          "summary": "Delete questionnaire",
+          "responseClass": "DeleteQuestionnaireResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/questionnaires",
+      "operations": [
+        {
+          "nickname": "GetDocumentQuestionnaires",
+          "summary": "Get document questionnaires",
+          "responseClass": "GetDocumentQuestionnairesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/questionnaires",
+      "operations": [
+        {
+          "nickname": "CreateDocumentQuestionnaire",
+          "summary": "Create document questionnaire",
+          "responseClass": "AddDocumentQuestionnaireResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaire",
+              "description": "Questionnaire",
+              "dataType": "QuestionnaireInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/questionnaires/{questionnaireId}",
+      "operations": [
+        {
+          "nickname": "AddDocumentQuestionnaire",
+          "summary": "Add document questionnaire",
+          "responseClass": "AddDocumentQuestionnaireResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/files/{fileId}/questionnaires/{questionnaireId}",
+      "operations": [
+        {
+          "nickname": "DeleteDocumentQuestionnaire",
+          "summary": "Delete document questionnaire",
+          "responseClass": "DeleteDocumentQuestionnaireResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/datasources",
+      "operations": [
+        {
+          "nickname": "AddDataSource",
+          "summary": "Add datasource",
+          "responseClass": "AddDatasourceResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasource",
+              "description": "Datasource",
+              "dataType": "Datasource",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/datasources/{datasourceId}",
+      "operations": [
+        {
+          "nickname": "UpdateDataSource",
+          "summary": "Update datasource",
+          "responseClass": "AddDatasourceResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasource",
+              "description": "Datasource",
+              "dataType": "Datasource",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/datasources/{datasourceId}/fields",
+      "operations": [
+        {
+          "nickname": "UpdateDataSourceFields",
+          "summary": "Update datasource fields",
+          "responseClass": "AddDatasourceResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasource",
+              "description": "Datasource",
+              "dataType": "Datasource",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/datasources/{datasourceId}",
+      "operations": [
+        {
+          "nickname": "DeleteDataSource",
+          "summary": "Delete datasource fields",
+          "responseClass": "DeleteDatasourceResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/datasources/{datasourceId}?field={fields}",
+      "operations": [
+        {
+          "nickname": "GetDataSource",
+          "summary": "Get datasource",
+          "responseClass": "GetDatasourceResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "datasourceId",
+              "description": "Datasource id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fields",
+              "description": "Fields",
+              "dataType": "string",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}/datasources?include_fields={includeFields}",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireDataSources",
+          "summary": "Get questionnaire datasources",
+          "responseClass": "GetDatasourcesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "QuestionnaireId id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "includeFields",
+              "description": "Include fields",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}/executions",
+      "operations": [
+        {
+          "nickname": "AddQuestionnaireExecution",
+          "summary": "Add questionnaire execution",
+          "responseClass": "AddQuestionnaireExecutionResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "execution",
+              "description": "Execution",
+              "dataType": "QuestionnaireExecutionInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}/executions",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireExecutions",
+          "summary": "Get questionnaire executions",
+          "responseClass": "GetQuestionnaireExecutionsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "QuestionnaireId global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/executions/{executionId}",
+      "operations": [
+        {
+          "nickname": "DeleteQuestionnaireExecution",
+          "summary": "Removes questionnaire execution",
+          "responseClass": "DeleteQuestionnaireExecutionResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "executionId",
+              "description": "Execution id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/executions/{executionId}",
+      "operations": [
+        {
+          "nickname": "UpdateQuestionnaireExecution",
+          "summary": "Update questionnaire execution",
+          "responseClass": "UpdateQuestionnaireExecutionResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "executionId",
+              "description": "Execution id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "execution",
+              "description": "Execution",
+              "dataType": "QuestionnaireExecutionInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/executions/{executionId}/status",
+      "operations": [
+        {
+          "nickname": "UpdateQuestionnaireExecutionStatus",
+          "summary": "Update questionnaire execution status",
+          "responseClass": "UpdateQuestionnaireExecutionResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "executionId",
+              "description": "Execution id",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "Status",
+              "dataType": "string",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}/collectors",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireCollectors",
+          "summary": "Get questionnaire collectors",
+          "responseClass": "GetQuestionnaireCollectorsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireCollector",
+          "summary": "Returns questionnaire collector",
+          "responseClass": "GetQuestionnaireCollectorResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}/collectors",
+      "operations": [
+        {
+          "nickname": "AddQuestionnaireCollector",
+          "summary": "Add questionnaire collector",
+          "responseClass": "AddQuestionnaireCollectorResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collector",
+              "description": "Questionnaire collector to be added",
+              "dataType": "QuestionnaireCollectorInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}",
+      "operations": [
+        {
+          "nickname": "UpdateQuestionnaireCollector",
+          "summary": "Update questionnaire collector",
+          "responseClass": "UpdateQuestionnaireCollectorResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collector",
+              "description": "Questionnaire collector data",
+              "dataType": "QuestionnaireCollectorInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/collectors/{collectorId}",
+      "operations": [
+        {
+          "nickname": "DeleteQuestionnaireCollector",
+          "summary": "Removes questionnaire collector",
+          "responseClass": "DeleteQuestionnaireCollectorResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collectorId",
+              "description": "Questionnaire collector global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/templates",
+      "operations": [
+        {
+          "nickname": "GetTemplates",
+          "summary": "Get template documents information",
+          "responseClass": "GetTemplatesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/merge/{userId}/questionnaires/{questionnaireId}/fields?include_geometry={includeGeometry}",
+      "operations": [
+        {
+          "nickname": "GetQuestionnaireFields",
+          "summary": "Get questionnaire fields",
+          "responseClass": "TemplateFieldsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "questionnaireId",
+              "description": "Questionnaire global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "includeGeometry",
+              "description": "A flag indicating whether fields coordinates and size should be included into the response.",
+              "dataType": "boolean",
+              "required": false,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "AddDocumentDataSourceResponse": {
+      "id": "AddDocumentDataSourceResponse",
+      "properties": {
+        "result": {
+          "type": "AddDocumentDataSourceResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddDocumentDataSourceResult": {
+      "id": "AddDocumentDataSourceResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        },
+        "document_id": {
+          "type": "double"
+        },
+        "datasource_id": {
+          "type": "double"
+        }
+      }
+    },
+    "DatasourceField": {
+      "id": "DatasourceField",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "values": {
+          "type": "List[Object]"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "MergeTemplateResponse": {
+      "id": "MergeTemplateResponse",
+      "properties": {
+        "result": {
+          "type": "MergeTemplateResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "MergeTemplateResult": {
+      "id": "MergeTemplateResult",
+      "properties": {
+        "job_id": {
+          "type": "double"
+        },
+        "document_id": {
+          "type": "double"
+        },
+        "datasource_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetQuestionnaireResponse": {
+      "id": "GetQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnaireResult": {
+      "id": "GetQuestionnaireResult",
+      "properties": {
+        "questionnaire": {
+          "type": "QuestionnaireInfo"
+        }
+      }
+    },
+    "QuestionnaireInfo": {
+      "id": "QuestionnaireInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "descr": {
+          "type": "string"
+        },
+        "assigned_questions": {
+          "type": "int"
+        },
+        "total_questions": {
+          "type": "int"
+        },
+        "resolved_executions": {
+          "type": "int"
+        },
+        "status": {
+          "type": "string"
+        },
+        "modified": {
+          "type": "long"
+        },
+        "expires": {
+          "type": "long"
+        },
+        "pages": {
+          "type": "List[QuestionnairePageInfo]"
+        }
+      }
+    },
+    "QuestionnairePageInfo": {
+      "id": "QuestionnairePageInfo",
+      "properties": {
+        "number": {
+          "type": "int"
+        },
+        "title": {
+          "type": "string"
+        },
+        "questions": {
+          "type": "List[QuestionInfo]"
+        }
+      }
+    },
+    "QuestionInfo": {
+      "id": "QuestionInfo",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "def_answer": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "answers": {
+          "type": "List[AnswerInfo]"
+        }
+      }
+    },
+    "AnswerInfo": {
+      "id": "AnswerInfo",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnairesResponse": {
+      "id": "GetQuestionnairesResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnairesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnairesResult": {
+      "id": "GetQuestionnairesResult",
+      "properties": {
+        "questionnaires": {
+          "type": "List[QuestionnaireInfo]"
+        }
+      }
+    },
+    "CreateQuestionnaireResponse": {
+      "id": "CreateQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "CreateQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateQuestionnaireResult": {
+      "id": "CreateQuestionnaireResult",
+      "properties": {
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "adjusted_name": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateQuestionnaireResponse": {
+      "id": "UpdateQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateQuestionnaireResult": {
+      "id": "UpdateQuestionnaireResult",
+      "properties": {
+        "questionnaire_id": {
+          "type": "double"
+        }
+      }
+    },
+    "DeleteQuestionnaireResponse": {
+      "id": "DeleteQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteQuestionnaireResult": {
+      "id": "DeleteQuestionnaireResult",
+      "properties": {
+        "questionnaire_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetDocumentQuestionnairesResponse": {
+      "id": "GetDocumentQuestionnairesResponse",
+      "properties": {
+        "result": {
+          "type": "GetDocumentQuestionnairesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetDocumentQuestionnairesResult": {
+      "id": "GetDocumentQuestionnairesResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        },
+        "questionnaires": {
+          "type": "List[QuestionnaireInfo]"
+        }
+      }
+    },
+    "AddDocumentQuestionnaireResponse": {
+      "id": "AddDocumentQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "AddDocumentQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddDocumentQuestionnaireResult": {
+      "id": "AddDocumentQuestionnaireResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        },
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "questionnaire_guid": {
+          "type": "string"
+        },
+        "adjusted_name": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteDocumentQuestionnaireResponse": {
+      "id": "DeleteDocumentQuestionnaireResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteDocumentQuestionnaireResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteDocumentQuestionnaireResult": {
+      "id": "DeleteDocumentQuestionnaireResult",
+      "properties": {
+        "document_id": {
+          "type": "double"
+        },
+        "questionnaire_id": {
+          "type": "double"
+        }
+      }
+    },
+    "AddDatasourceResponse": {
+      "id": "AddDatasourceResponse",
+      "properties": {
+        "result": {
+          "type": "AddDatasourceResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddDatasourceResult": {
+      "id": "AddDatasourceResult",
+      "properties": {
+        "datasource_id": {
+          "type": "double"
+        }
+      }
+    },
+    "Datasource": {
+      "id": "Datasource",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "descr": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "List[DatasourceField]"
+        },
+        "created_on": {
+          "type": "long"
+        },
+        "modified_on": {
+          "type": "long"
+        }
+      }
+    },
+    "DeleteDatasourceResponse": {
+      "id": "DeleteDatasourceResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteDatasourceResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteDatasourceResult": {
+      "id": "DeleteDatasourceResult",
+      "properties": {
+        "datasource_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetDatasourceResponse": {
+      "id": "GetDatasourceResponse",
+      "properties": {
+        "result": {
+          "type": "GetDatasourceResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetDatasourceResult": {
+      "id": "GetDatasourceResult",
+      "properties": {
+        "datasource": {
+          "type": "Datasource"
+        }
+      }
+    },
+    "GetDatasourcesResponse": {
+      "id": "GetDatasourcesResponse",
+      "properties": {
+        "result": {
+          "type": "GetDatasourcesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetDatasourcesResult": {
+      "id": "GetDatasourcesResult",
+      "properties": {
+        "datasources": {
+          "type": "List[Datasource]"
+        }
+      }
+    },
+    "AddQuestionnaireExecutionResponse": {
+      "id": "AddQuestionnaireExecutionResponse",
+      "properties": {
+        "result": {
+          "type": "AddQuestionnaireExecutionResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddQuestionnaireExecutionResult": {
+      "id": "AddQuestionnaireExecutionResult",
+      "properties": {
+        "collector_id": {
+          "type": "double"
+        },
+        "execution_id": {
+          "type": "double"
+        },
+        "execution_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionnaireExecutionInfo": {
+      "id": "QuestionnaireExecutionInfo",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "collector_id": {
+          "type": "double"
+        },
+        "collector_guid": {
+          "type": "string"
+        },
+        "questionnaire_name": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "UserIdentity"
+        },
+        "executive": {
+          "type": "UserIdentity"
+        },
+        "approver": {
+          "type": "UserIdentity"
+        },
+        "datasource_id": {
+          "type": "double"
+        },
+        "id": {
+          "type": "double"
+        },
+        "modified": {
+          "type": "long"
+        },
+        "document": {
+          "type": "DocumentIdentity"
+        }
+      }
+    },
+    "UserIdentity": {
+      "id": "UserIdentity",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentIdentity": {
+      "id": "DocumentIdentity",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnaireExecutionsResponse": {
+      "id": "GetQuestionnaireExecutionsResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireExecutionsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnaireExecutionsResult": {
+      "id": "GetQuestionnaireExecutionsResult",
+      "properties": {
+        "executions": {
+          "type": "List[QuestionnaireExecutionInfo]"
+        }
+      }
+    },
+    "DeleteQuestionnaireExecutionResponse": {
+      "id": "DeleteQuestionnaireExecutionResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteQuestionnaireExecutionResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteQuestionnaireExecutionResult": {
+      "id": "DeleteQuestionnaireExecutionResult",
+      "properties": {
+        "collector_id": {
+          "type": "double"
+        },
+        "execution_id": {
+          "type": "double"
+        }
+      }
+    },
+    "UpdateQuestionnaireExecutionResponse": {
+      "id": "UpdateQuestionnaireExecutionResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateQuestionnaireExecutionResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateQuestionnaireExecutionResult": {
+      "id": "UpdateQuestionnaireExecutionResult",
+      "properties": {
+        "execution_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorsResponse": {
+      "id": "GetQuestionnaireCollectorsResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireCollectorsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorsResult": {
+      "id": "GetQuestionnaireCollectorsResult",
+      "properties": {
+        "collectors": {
+          "type": "List[QuestionnaireCollectorInfo]"
+        }
+      }
+    },
+    "QuestionnaireCollectorInfo": {
+      "id": "QuestionnaireCollectorInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "resolved_exectuions": {
+          "type": "int"
+        },
+        "emails": {
+          "type": "List[string]"
+        },
+        "modified": {
+          "type": "long"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorResponse": {
+      "id": "GetQuestionnaireCollectorResponse",
+      "properties": {
+        "result": {
+          "type": "GetQuestionnaireCollectorResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetQuestionnaireCollectorResult": {
+      "id": "GetQuestionnaireCollectorResult",
+      "properties": {
+        "collector": {
+          "type": "QuestionnaireCollectorInfo"
+        }
+      }
+    },
+    "AddQuestionnaireCollectorResponse": {
+      "id": "AddQuestionnaireCollectorResponse",
+      "properties": {
+        "result": {
+          "type": "AddQuestionnaireCollectorResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddQuestionnaireCollectorResult": {
+      "id": "AddQuestionnaireCollectorResult",
+      "properties": {
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "collector_id": {
+          "type": "double"
+        },
+        "collector_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateQuestionnaireCollectorResponse": {
+      "id": "UpdateQuestionnaireCollectorResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateQuestionnaireCollectorResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateQuestionnaireCollectorResult": {
+      "id": "UpdateQuestionnaireCollectorResult",
+      "properties": {
+        "collector_id": {
+          "type": "double"
+        }
+      }
+    },
+    "DeleteQuestionnaireCollectorResponse": {
+      "id": "DeleteQuestionnaireCollectorResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteQuestionnaireCollectorResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteQuestionnaireCollectorResult": {
+      "id": "DeleteQuestionnaireCollectorResult",
+      "properties": {
+        "questionnaire_id": {
+          "type": "double"
+        },
+        "collector_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetTemplatesResponse": {
+      "id": "GetTemplatesResponse",
+      "properties": {
+        "result": {
+          "type": "GetTemplatesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTemplatesResult": {
+      "id": "GetTemplatesResult",
+      "properties": {
+        "templates": {
+          "type": "List[TemplateInfo]"
+        }
+      }
+    },
+    "TemplateInfo": {
+      "id": "TemplateInfo",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "field_count": {
+          "type": "int"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "TemplateFieldsResponse": {
+      "id": "TemplateFieldsResponse",
+      "properties": {
+        "result": {
+          "type": "TemplateFieldsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "TemplateFieldsResult": {
+      "id": "TemplateFieldsResult",
+      "properties": {
+        "fields": {
+          "type": "List[TemplateField]"
+        }
+      }
+    },
+    "TemplateField": {
+      "id": "TemplateField",
+      "properties": {
+        "page": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "rect": {
+          "type": "Rectangle"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "w": {
+          "type": "double"
+        },
+        "h": {
+          "type": "double"
+        }
+      }
+    }
+  }
+}

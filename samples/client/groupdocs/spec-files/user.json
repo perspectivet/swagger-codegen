@@ -1,0 +1,1260 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/mgmt",
+  "apis": [
+    {
+      "path": "/mgmt/{userId}/profile",
+      "operations": [
+        {
+          "nickname": "GetUserProfile",
+          "summary": "Get user profile",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/profile",
+      "operations": [
+        {
+          "nickname": "UpdateUserProfile",
+          "summary": "Update user profile",
+          "responseClass": "UpdateUserResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "info",
+              "description": "Info",
+              "dataType": "UserInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/profile/password",
+      "operations": [
+        {
+          "nickname": "ChangeUserPassword",
+          "summary": "Change user password",
+          "responseClass": "ChangePasswordResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "password",
+              "description": "Password",
+              "dataType": "UserPasswordInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/reset-tokens?token={token}",
+      "operations": [
+        {
+          "nickname": "GetUserProfileByResetToken",
+          "summary": "Get user profile by reset token",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "token",
+              "description": "Token",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/verif-tokens?token={token}",
+      "operations": [
+        {
+          "nickname": "GetUserProfileByVerifToken",
+          "summary": "Get user profile by verif token",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "token",
+              "description": "Token",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/claimed-tokens?token={token}",
+      "operations": [
+        {
+          "nickname": "GetUserProfileByClaimedToken",
+          "summary": "Get user profile by claimed token",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "token",
+              "description": "Token",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/profile",
+      "operations": [
+        {
+          "nickname": "GetAlienUserProfile",
+          "summary": "Get alien user profile",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/profile",
+      "operations": [
+        {
+          "nickname": "UpdateAlienUserProfile",
+          "summary": "Update alien user profile",
+          "responseClass": "UpdateUserResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "info",
+              "description": "Info",
+              "dataType": "UserInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users",
+      "operations": [
+        {
+          "nickname": "CreateUser",
+          "summary": "Create user",
+          "responseClass": "CreateUserResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "payload",
+              "description": "Payload",
+              "dataType": "UserInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/logins",
+      "operations": [
+        {
+          "nickname": "CreateUserLogin",
+          "summary": "Create user login",
+          "responseClass": "UserInfoResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "password",
+              "description": "Password",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/password",
+      "operations": [
+        {
+          "nickname": "ChangeAlienUserPassword",
+          "summary": "Change alien user password",
+          "responseClass": "ChangePasswordResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "password",
+              "description": "Password",
+              "dataType": "UserPasswordInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/password",
+      "operations": [
+        {
+          "nickname": "ResetUserPassword",
+          "summary": "Reset user password",
+          "responseClass": "ResetPasswordResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/storages",
+      "operations": [
+        {
+          "nickname": "GetStorageProviders",
+          "summary": "Returns user's storage providers.",
+          "responseClass": "GetStorageProvidersResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/storages/{provider}",
+      "operations": [
+        {
+          "nickname": "AddStorageProvider",
+          "summary": "Adds a new storage provider configuration.",
+          "responseClass": "AddStorageProviderResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "provider",
+              "description": "Storage provider name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "providerInfo",
+              "description": "Storage provider configuration details",
+              "dataType": "StorageProviderInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/storages/{provider}",
+      "operations": [
+        {
+          "nickname": "UpdateStorageProvider",
+          "summary": "Updates user's storage provider configuration.",
+          "responseClass": "UpdateStorageProviderResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "provider",
+              "description": "Storage provider name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "providerInfo",
+              "description": "Storage provider configuration details",
+              "dataType": "StorageProviderInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/roles",
+      "operations": [
+        {
+          "nickname": "GetRoles",
+          "summary": "Returns a list of user roles.",
+          "responseClass": "GetRolesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/roles",
+      "operations": [
+        {
+          "nickname": "GetUserRoles",
+          "summary": "Returns a list of user roles.",
+          "responseClass": "GetRolesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/users/{userId}/roles",
+      "operations": [
+        {
+          "nickname": "SetUserRoles",
+          "summary": "Set user roles.",
+          "responseClass": "SetUserRolesResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "Caller GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "roles",
+              "description": "A list of user roles",
+              "dataType": "List[RoleInfo]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/account",
+      "operations": [
+        {
+          "nickname": "GetAccount",
+          "summary": "Returns an account information.",
+          "responseClass": "GetAccountResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/account",
+      "operations": [
+        {
+          "nickname": "DeleteAccount",
+          "summary": "Closes user's account.",
+          "responseClass": "DeleteAccountResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User global unique identifier",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{adminId}/account/users",
+      "operations": [
+        {
+          "nickname": "GetAccountUsers",
+          "summary": "Returns account user list.",
+          "responseClass": "GetAccountUsersResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "adminId",
+              "description": "Administrator GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{adminId}/account/users/{userName}",
+      "operations": [
+        {
+          "nickname": "UpdateAccountUser",
+          "summary": "Create or update account user.",
+          "responseClass": "UpdateAccountUserResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "adminId",
+              "description": "Administrator GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userName",
+              "description": "User name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "user",
+              "description": "User details",
+              "dataType": "UserInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{adminId}/account/users/{userName}",
+      "operations": [
+        {
+          "nickname": "DeleteAccountUser",
+          "summary": "Delete account user.",
+          "responseClass": "DeleteAccountUserResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "adminId",
+              "description": "Administrator GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "userName",
+              "description": "User name",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/embedkey/{area}",
+      "operations": [
+        {
+          "nickname": "GetUserEmbedKey",
+          "summary": "Returns active user embed key.",
+          "responseClass": "GetUserEmbedKeyResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "area",
+              "description": "Application area where the key is",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{callerId}/embedkey/guid/{guid}",
+      "operations": [
+        {
+          "nickname": "GetUserEmbedKeyFromGuid",
+          "summary": "Returns embed key by GUID.",
+          "responseClass": "GetUserEmbedKeyResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "callerId",
+              "description": "UserId invoked the service",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "guid",
+              "description": "Key GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/mgmt/{userId}/embedkey/new/{area}",
+      "operations": [
+        {
+          "nickname": "GenerateKeyForUser",
+          "summary": "Generates new active user embed key.",
+          "responseClass": "GetUserEmbedKeyResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "area",
+              "description": "Application area where the key is",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "UserInfoResponse": {
+      "id": "UserInfoResponse",
+      "properties": {
+        "result": {
+          "type": "UserInfoResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UserInfoResult": {
+      "id": "UserInfoResult",
+      "properties": {
+        "user": {
+          "type": "UserInfo"
+        }
+      }
+    },
+    "UserInfo": {
+      "id": "UserInfo",
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "pkey": {
+          "type": "string"
+        },
+        "pswd_salt": {
+          "type": "string"
+        },
+        "claimed_id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "int"
+        },
+        "photo": {
+          "items":{
+            "type":"int"
+          },
+          "type": "List"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "news_eanbled": {
+          "type": "boolean"
+        },
+        "alerts_eanbled": {
+          "type": "boolean"
+        },
+        "support_eanbled": {
+          "type": "boolean"
+        },
+        "support_email": {
+          "type": "string"
+        },
+        "signedupOn": {
+          "type": "long"
+        },
+        "signedinOn": {
+          "type": "long"
+        },
+        "signin_count": {
+          "type": "int"
+        },
+        "roles": {
+          "items":{
+            "$ref":"RoleInfo"
+          },
+          "type": "List"
+        },
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleInfo": {
+      "id": "RoleInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateUserResponse": {
+      "id": "UpdateUserResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateUserResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateUserResult": {
+      "id": "UpdateUserResult",
+      "properties": {
+        "user_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "ChangePasswordResponse": {
+      "id": "ChangePasswordResponse",
+      "properties": {
+        "result": {
+          "type": "ChangePasswordResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ChangePasswordResult": {
+      "id": "ChangePasswordResult",
+      "properties": {
+        "user_guid": {
+          "type": "string"
+        }
+      }
+    },
+    "UserPasswordInfo": {
+      "id": "UserPasswordInfo",
+      "properties": {
+        "old_pswd_salt": {
+          "type": "string"
+        },
+        "new_pswd_salt": {
+          "type": "string"
+        },
+        "reset_token": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateUserResponse": {
+      "id": "CreateUserResponse",
+      "properties": {
+        "result": {
+          "type": "CreateUserResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateUserResult": {
+      "id": "CreateUserResult",
+      "properties": {
+        "user": {
+          "type": "UserInfo"
+        }
+      }
+    },
+    "ResetPasswordResponse": {
+      "id": "ResetPasswordResponse",
+      "properties": {
+        "result": {
+          "type": "ResetPasswordResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ResetPasswordResult": {
+      "id": "ResetPasswordResult",
+      "properties": {
+        "user_name": {
+          "type": "string"
+        }
+      }
+    },
+    "GetStorageProvidersResponse": {
+      "id": "GetStorageProvidersResponse",
+      "properties": {
+        "result": {
+          "type": "GetStorageProvidersResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetStorageProvidersResult": {
+      "id": "GetStorageProvidersResult",
+      "properties": {
+        "providers": {
+          "items":{
+            "$ref":"StorageProviderInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "StorageProviderInfo": {
+      "id": "StorageProviderInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "token": {
+          "items":{
+            "type":"int"
+          },
+          "type": "List"
+        },
+        "publicKey": {
+          "type": "string"
+        },
+        "privateKey": {
+          "type": "string"
+        },
+        "rootFolder": {
+          "type": "string"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "serviceHost": {
+          "type": "string"
+        }
+      }
+    },
+    "AddStorageProviderResponse": {
+      "id": "AddStorageProviderResponse",
+      "properties": {
+        "result": {
+          "type": "AddStorageProviderResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddStorageProviderResult": {
+      "id": "AddStorageProviderResult",
+      "properties": {}
+    },
+    "UpdateStorageProviderResponse": {
+      "id": "UpdateStorageProviderResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateStorageProviderResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateStorageProviderResult": {
+      "id": "UpdateStorageProviderResult",
+      "properties": {}
+    },
+    "GetRolesResponse": {
+      "id": "GetRolesResponse",
+      "properties": {
+        "result": {
+          "type": "GetRolesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetRolesResult": {
+      "id": "GetRolesResult",
+      "properties": {
+        "roles": {
+          "items":{
+            "$ref":"RoleInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SetUserRolesResponse": {
+      "id": "SetUserRolesResponse",
+      "properties": {
+        "result": {
+          "type": "SetUserRolesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetUserRolesResult": {
+      "id": "SetUserRolesResult",
+      "properties": {}
+    },
+    "GetAccountResponse": {
+      "id": "GetAccountResponse",
+      "properties": {
+        "result": {
+          "type": "GetAccountResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetAccountResult": {
+      "id": "GetAccountResult",
+      "properties": {
+        "max_users": {
+          "type": "int"
+        },
+        "users": {
+          "items":{
+            "$ref":"UserInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "DeleteAccountResponse": {
+      "id": "DeleteAccountResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteAccountResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteAccountResult": {
+      "id": "DeleteAccountResult",
+      "properties": {
+        "account_id": {
+          "type": "double"
+        }
+      }
+    },
+    "GetAccountUsersResponse": {
+      "id": "GetAccountUsersResponse",
+      "properties": {
+        "result": {
+          "type": "GetAccountUsersResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetAccountUsersResult": {
+      "id": "GetAccountUsersResult",
+      "properties": {
+        "max_users": {
+          "type": "int"
+        },
+        "users": {
+          "items":{
+            "$ref":"UserInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "UpdateAccountUserResponse": {
+      "id": "UpdateAccountUserResponse",
+      "properties": {
+        "result": {
+          "type": "UpdateAccountUserResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateAccountUserResult": {
+      "id": "UpdateAccountUserResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteAccountUserResponse": {
+      "id": "DeleteAccountUserResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteAccountUserResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteAccountUserResult": {
+      "id": "DeleteAccountUserResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    },
+    "GetUserEmbedKeyResponse": {
+      "id": "GetUserEmbedKeyResponse",
+      "properties": {
+        "result": {
+          "type": "GetUserEmbedKeyResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetUserEmbedKeyResult": {
+      "id": "GetUserEmbedKeyResult",
+      "properties": {
+        "key": {
+          "type": "UserEmbedKeyInfo"
+        }
+      }
+    },
+    "UserEmbedKeyInfo": {
+      "id": "UserEmbedKeyInfo",
+      "properties": {
+        "user": {
+          "type": "UserIdentity"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "area": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "hit_count": {
+          "type": "int"
+        }
+      }
+    },
+    "UserIdentity": {
+      "id": "UserIdentity",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

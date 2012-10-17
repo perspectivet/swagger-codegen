@@ -1,0 +1,1031 @@
+{
+  "basePath": "https://dev-api.groupdocs.com/v2.0",
+  "swaggerVersion": "1.1",
+  "apiVersion": "0.1",
+  "resourcePath": "/ant",
+  "apis": [
+    {
+      "path": "/ant/{userId}/files/{fileId}/annotations",
+      "operations": [
+        {
+          "nickname": "CreateAnnotation",
+          "summary": "Create annotation",
+          "responseClass": "CreateAnnotationResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotation",
+              "description": "annotation",
+              "dataType": "AnnotationInfo",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/annotations",
+      "operations": [
+        {
+          "nickname": "ListAnnotations",
+          "summary": "Get list of annotations",
+          "responseClass": "ListAnnotationsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/annotations/{annotationId}",
+      "operations": [
+        {
+          "nickname": "DeleteAnnotation",
+          "summary": "Delete annotation",
+          "responseClass": "DeleteAnnotationResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationId",
+              "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/annotations/{annotationId}/replies",
+      "operations": [
+        {
+          "nickname": "CreateAnnotationReply",
+          "summary": "Create annotation reply",
+          "responseClass": "AddReplyResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationId",
+              "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "parentReplyGuid",
+              "description": "parentReplyGuid",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "message",
+              "description": "Message",
+              "dataType": "string",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/replies/{replyGuid}",
+      "operations": [
+        {
+          "nickname": "EditAnnotationReply",
+          "summary": "Edit annotation reply",
+          "responseClass": "EditReplyResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "replyGuid",
+              "description": "Reply GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "message",
+              "description": "Message",
+              "dataType": "string",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/replies/{replyGuid}",
+      "operations": [
+        {
+          "nickname": "DeleteAnnotationReply",
+          "summary": "Delete annotation reply",
+          "responseClass": "DeleteReplyResponse",
+          "httpMethod": "DELETE",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "replyGuid",
+              "description": "Reply GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/annotations/{annotationId}/replies?after={after}",
+      "operations": [
+        {
+          "nickname": "ListAnnotationReplies",
+          "summary": "Get list of annotation replies",
+          "responseClass": "ListRepliesResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationId",
+              "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "after",
+              "description": "After",
+              "dataType": "long",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/version/{version}/collaborators",
+      "operations": [
+        {
+          "nickname": "SetAnnotationCollaborators",
+          "summary": "Set annotation collaborators",
+          "responseClass": "SetCollaboratorsResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "version",
+              "description": "Annotation version",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collaborators",
+              "description": "Collaborators",
+              "dataType": "List[string]",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/collaborators",
+      "operations": [
+        {
+          "nickname": "GetAnnotationCollaborators",
+          "summary": "Get list of annotation collaborators",
+          "responseClass": "GetCollaboratorsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/collaborators",
+      "operations": [
+        {
+          "nickname": "AddAnnotationCollaborator",
+          "summary": "Add an annotation collaborator",
+          "responseClass": "AddCollaboratorResponse",
+          "httpMethod": "POST",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collaborator",
+              "description": "Collaborator",
+              "dataType": "string",
+              "required": false,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/contacts",
+      "operations": [
+        {
+          "nickname": "GetReviewerContacts",
+          "summary": "Get list of reviewer contacts",
+          "responseClass": "GetReviewerContactsResponse",
+          "httpMethod": "GET",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/reviewerContacts",
+      "operations": [
+        {
+          "nickname": "SetReviewerContacts",
+          "summary": "Get list of reviewer contacts",
+          "responseClass": "GetReviewerContactsResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/annotations/{annotationId}/position",
+      "operations": [
+        {
+          "nickname": "MoveAnnotation",
+          "summary": "Move annotation",
+          "responseClass": "MoveAnnotationResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationId",
+              "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "position",
+              "description": "position",
+              "dataType": "Point",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/annotations/{annotationId}/annotationAccess",
+      "operations": [
+        {
+          "nickname": "SetAnnotationAccess",
+          "summary": "Set Annotation Access",
+          "responseClass": "SetAnnotationAccessResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationId",
+              "description": "Annotation ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "annotationAccess",
+              "description": "Annotation Access",
+              "dataType": "int",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/reviewerRights",
+      "operations": [
+        {
+          "nickname": "SetReviewerRights",
+          "summary": "Set Reviewer Rights",
+          "responseClass": "SetDocumentRightsResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "collaborators",
+              "description": "Collaborators",
+              "dataType": "List[ReviewerInfo]",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ant/{userId}/files/{fileId}/sharedLinkAccessRights",
+      "operations": [
+        {
+          "nickname": "SetSharedLinkAccessRights",
+          "summary": "Set Shared Link Access Rights",
+          "responseClass": "SetSharedLinkAccessRightsResponse",
+          "httpMethod": "PUT",
+          "parameters": [
+            {
+              "name": "userId",
+              "description": "User GUID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "fileId",
+              "description": "File ID",
+              "dataType": "string",
+              "required": true,
+              "paramType": "path"
+            },
+            {
+              "name": "sharedLinkAccessRights",
+              "description": "Access Rights for the collaborate link",
+              "dataType": "int",
+              "required": true,
+              "paramType": "body"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "CreateAnnotationResponse": {
+      "id": "CreateAnnotationResponse",
+      "properties": {
+        "result": {
+          "type": "CreateAnnotationResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateAnnotationResult": {
+      "id": "CreateAnnotationResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "annotationGuid": {
+          "type": "string"
+        },
+        "replyGuid": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "sessionGuid": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        }
+      }
+    },
+    "AnnotationInfo": {
+      "id": "AnnotationInfo",
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "documentGuid": {
+          "type": "string"
+        },
+        "sessionGuid": {
+          "type": "string"
+        },
+        "creatorGuid": {
+          "type": "string"
+        },
+        "box": {
+          "type": "Rectangle"
+        },
+        "annotationPosition": {
+          "type": "Point"
+        },
+        "range": {
+          "type": "Range"
+        },
+        "svgPath": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "access": {
+          "type": "string"
+        },
+        "replies": {		  
+          "items":{
+            "$ref":"AnnotationReplyInfo"
+          },
+          "type": "List"
+        },
+        "createdOn": {
+          "type": "long"
+        }
+      }
+    },
+    "Rectangle": {
+      "id": "Rectangle",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        },
+        "w": {
+          "type": "double"
+        },
+        "h": {
+          "type": "double"
+        }
+      }
+    },
+    "Point": {
+      "id": "Point",
+      "properties": {
+        "x": {
+          "type": "double"
+        },
+        "y": {
+          "type": "double"
+        }
+      }
+    },
+    "Range": {
+      "id": "Range",
+      "properties": {
+        "pos": {
+          "type": "int"
+        },
+        "len": {
+          "type": "int"
+        }
+      }
+    },
+    "AnnotationReplyInfo": {
+      "id": "AnnotationReplyInfo",
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "userGuid": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "repliedOn": {
+          "type": "long"
+        },
+        "parentReplyGuid": {
+          "type": "string"
+        }
+      }
+    },
+    "ListAnnotationsResponse": {
+      "id": "ListAnnotationsResponse",
+      "properties": {
+        "result": {
+          "type": "ListAnnotationsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ListAnnotationsResult": {
+      "id": "ListAnnotationsResult",
+      "properties": {
+        "documentGuid": {
+          "type": "string"
+        },
+        "sessionGuid": {
+          "type": "string"
+        },
+        "annotations": {
+          "items":{
+            "$ref":"AnnotationInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "DeleteAnnotationResponse": {
+      "id": "DeleteAnnotationResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteAnnotationResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteAnnotationResult": {
+      "id": "DeleteAnnotationResult",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        }
+      }
+    },
+    "AddReplyResponse": {
+      "id": "AddReplyResponse",
+      "properties": {
+        "result": {
+          "type": "AddReplyResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddReplyResult": {
+      "id": "AddReplyResult",
+      "properties": {
+        "replyGuid": {
+          "type": "string"
+        },
+        "annotationGuid": {
+          "type": "string"
+        },
+        "replyDateTime": {
+          "type": "Date"
+        }
+      }
+    },
+    "EditReplyResponse": {
+      "id": "EditReplyResponse",
+      "properties": {
+        "result": {
+          "type": "EditReplyResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "EditReplyResult": {
+      "id": "EditReplyResult",
+      "properties": {}
+    },
+    "DeleteReplyResponse": {
+      "id": "DeleteReplyResponse",
+      "properties": {
+        "result": {
+          "type": "DeleteReplyResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteReplyResult": {
+      "id": "DeleteReplyResult",
+      "properties": {
+        "replyGuid": {
+          "type": "string"
+        },
+        "annotationGuid": {
+          "type": "string"
+        }
+      }
+    },
+    "ListRepliesResponse": {
+      "id": "ListRepliesResponse",
+      "properties": {
+        "result": {
+          "type": "ListRepliesResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "ListRepliesResult": {
+      "id": "ListRepliesResult",
+      "properties": {
+        "annotationGuid": {
+          "type": "string"
+        },
+        "replies": {
+          "items":{
+            "$ref":"AnnotationReplyInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "SetCollaboratorsResponse": {
+      "id": "SetCollaboratorsResponse",
+      "properties": {
+        "result": {
+          "type": "SetCollaboratorsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetCollaboratorsResult": {
+      "id": "SetCollaboratorsResult",
+      "properties": {
+        "documentGuid": {
+          "type": "string"
+        },
+        "sessionGuid": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "ReviewerInfo"
+        },
+        "collaborators": {
+          "items":{
+            "$ref":"ReviewerInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "ReviewerInfo": {
+      "id": "ReviewerInfo",
+      "properties": {
+        "id": {
+          "type": "double"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "primary_email": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "access_rights": {
+          "type": "int"
+        },
+        "color": {
+          "type": "int"
+        }
+      }
+    },
+    "GetCollaboratorsResponse": {
+      "id": "GetCollaboratorsResponse",
+      "properties": {
+        "result": {
+          "type": "GetCollaboratorsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetCollaboratorsResult": {
+      "id": "GetCollaboratorsResult",
+      "properties": {
+        "documentGuid": {
+          "type": "string"
+        },
+        "sessionGuid": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "ReviewerInfo"
+        },
+        "collaborators": {
+          "items":{
+            "$ref":"ReviewerInfo"
+          },
+          "type": "List"
+        },
+        "shared_link_access_rights": {
+          "type": "int"
+        }
+      }
+    },
+    "AddCollaboratorResponse": {
+      "id": "AddCollaboratorResponse",
+      "properties": {
+        "result": {
+          "type": "AddCollaboratorResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddCollaboratorResult": {
+      "id": "AddCollaboratorResult",
+      "properties": {}
+    },
+    "GetReviewerContactsResponse": {
+      "id": "GetReviewerContactsResponse",
+      "properties": {
+        "result": {
+          "type": "GetReviewerContactsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "GetReviewerContactsResult": {
+      "id": "GetReviewerContactsResult",
+      "properties": {
+        "reviewerContacts": {
+          "items":{
+            "$ref":"ReviewerContactInfo"
+          },
+          "type": "List"
+        }
+      }
+    },
+    "ReviewerContactInfo": {
+      "id": "ReviewerContactInfo",
+      "properties": {
+        "emailAddress": {
+          "type": "string"
+        },
+        "FullName": {
+          "type": "string"
+        }
+      }
+    },
+    "MoveAnnotationResponse": {
+      "id": "MoveAnnotationResponse",
+      "properties": {
+        "result": {
+          "type": "MoveAnnotationResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "MoveAnnotationResult": {
+      "id": "MoveAnnotationResult",
+      "properties": {
+        "annotationGuid": {
+          "type": "string"
+        }
+      }
+    },
+    "SetAnnotationAccessResponse": {
+      "id": "SetAnnotationAccessResponse",
+      "properties": {
+        "result": {
+          "type": "SetAnnotationAccessResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetAnnotationAccessResult": {
+      "id": "SetAnnotationAccessResult",
+      "properties": {
+        "annotation": {
+          "type": "AnnotationInfo"
+        }
+      }
+    },
+    "SetSharedLinkAccessRightsResponse": {
+      "id": "SetSharedLinkAccessRightsResponse",
+      "properties": {
+        "result": {
+          "type": "SetSharedLinkAccessRightsResult"
+        },
+        "status": {
+          "type": "string"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetSharedLinkAccessRightsResult": {
+      "id": "SetSharedLinkAccessRightsResult",
+      "properties": {}
+    },
+    "SetDocumentRightsResponse": {
+      "id": "SetDocumentRightsResponse",
+      "properties": {}
+    }
+  }
+}
