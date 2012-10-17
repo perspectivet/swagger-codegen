@@ -175,4 +175,7 @@ class BasicJavaGenerator extends BasicGenerator {
       throw new Exception("reserved word " + "\"" + word + "\" not allowed")
     else word
   }
+  
+  override def toVarName(name: String): String = name.replaceAll("-", "_")
+  
 }
