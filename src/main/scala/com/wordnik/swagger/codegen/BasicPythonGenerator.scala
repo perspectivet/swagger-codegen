@@ -41,7 +41,7 @@ class BasicPythonGenerator extends BasicGenerator {
   override def modelPackage = Some("models")
 
   // package for apis
-  override def apiPackage = None
+  override def apiPackage: Option[String] = None
 
   // file suffix
   override def fileSuffix = ".py"
