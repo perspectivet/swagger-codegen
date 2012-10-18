@@ -63,7 +63,7 @@ class BasicPythonGenerator extends BasicGenerator {
         responseClass match {
           case "void" => None
           case e: String => {
-            responseClass.startsWith("List") match {
+            responseClass.startsWith("List[") match {
               case true => Some("list")
               case false => Some(responseClass)
             }
@@ -81,7 +81,7 @@ class BasicPythonGenerator extends BasicGenerator {
         responseClass match {
           case "void" => None
           case e: String => {
-            responseClass.startsWith("List") match {
+            responseClass.startsWith("List[") match {
               case true => {
                 val responseSubClass = responseClass.dropRight(1).substring(5)
                 typeMapping.contains(responseSubClass) match {
