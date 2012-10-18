@@ -26,8 +26,9 @@ public class {{classname}} {
 
   {{#operation}}
   public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}} {{nickname}} ({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+  	String resourcePath = "{{path}}".replaceAll("\\*", "");
     // create path and map variables
-    String resourcePath = "{{path}}".replaceAll("\\{format\\}","json"){{#pathParams}}.replaceAll("\\{" + "{{baseName}}" + "\\}", String.valueOf({{{paramName}}})){{/pathParams}};
+    resourcePath = resourcePath.replaceAll("\\{format\\}","json"){{#pathParams}}.replaceAll("\\{" + "{{baseName}}" + "\\}", String.valueOf({{{paramName}}})){{/pathParams}};
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
