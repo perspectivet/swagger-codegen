@@ -52,7 +52,7 @@ class {{classname}}(object):
             params[key] = val
         del params['kwargs']
 
-        resourcePath = '{{path}}'
+        resourcePath = '{{path}}'.replace('*', '')
         resourcePath = resourcePath.replace('{format}', 'json')
         method = '{{httpMethod}}'
 
