@@ -12,18 +12,44 @@ import urllib2
 import httplib
 import json
 import datetime
+import mimetypes
 
 from models import *
 
 
+class RequestSigner(object):
+    
+    def __init__(self):
+        if type(self) == RequestSigner:
+            raise Exception("RequestSigner is an abstract class and cannot be instantiated.")
+        
+    def signUrl(self, url):
+        raise NotImplementedError
+        
+    def signContent(self, requestBody, headers):
+        raise NotImplementedError
+    
+
+class DefaultRequestSigner(RequestSigner):
+    
+    def __init__(self, apiKey):
+        self.apiKey = apiKey
+        
+    def signUrl(self, url):
+        return url
+        
+    def signContent(self, requestBody, headers):
+        return requestBody
+    
+    
 class ApiClient:
     """Generic API client for Swagger client library builds"""
 
-    def __init__(self, apiKey=None, apiServer=None):
+    def __init__(self, apiKey=None, apiServer=None, requestSigner=None):
         if apiKey == None:
             raise Exception('You must pass an apiKey when instantiating the '
                             'APIClient')
-        self.apiKey = apiKey
+        self.signer = DefaultRequestSigner(apiKey) if requestSigner == None else requestSigner(apiKey)
         self.apiServer = apiServer
         self.cookie = None
 
@@ -36,8 +62,18 @@ class ApiClient:
             for param, value in headerParams.iteritems():
                 headers[param] = value
 
-        headers['Content-type'] = 'application/json'
-        headers['api_key'] = self.apiKey
+        if type(self.signer) == DefaultRequestSigner:
+            headers['api_key'] = self.signer.apiKey
+        
+        filename = False
+        if not postData:
+            headers['Content-type'] = 'text/html'
+        elif isinstance(postData, str) and postData.startswith('file://'):
+            filename = postData[7:len(postData)]
+            headers['Content-type'] = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+            headers['Content-Length'] = str(os.path.getsize(filename))
+        else:
+            headers['Content-type'] = 'application/json'
 
         if self.cookie:
             headers['Cookie'] = self.cookie
@@ -56,15 +92,17 @@ class ApiClient:
 
         elif method in ['POST', 'PUT', 'DELETE']:
 
-            if postData:
-                headers['Content-type'] = 'application/json'
-                data = self.sanitizeForSerialization(postData)
-                data = json.dumps(data)
+            if filename:
+                data = open(filename, "rb")
+            elif type(postData) not in [str, int, float, bool]:
+                data = self.signer.signContent(json.dumps(self.sanitizeForSerialization(postData)), headers)
+            else: 
+                data = self.signer.signContent(postData, headers)
 
         else:
             raise Exception('Method ' + method + ' is not recognized.')
 
-        request = MethodRequest(method=method, url=url, headers=headers,
+        request = MethodRequest(method=method, url=self.encodeURI(self.signer.signUrl(url)), headers=headers,
                                 data=data)
 
         # Make the request
@@ -172,6 +210,15 @@ class ApiClient:
                                                              attrType))
 
         return instance
+    
+    @staticmethod
+    def encodeURI(url):
+        encoded = urllib.quote(url, safe='~@#$&()*!=:;,.?/\'').replace("%25", "%")
+        return encoded
+
+    @staticmethod
+    def encodeURIComponent(url):
+        return urllib.quote(url, safe='~()*!.\'')
 
 
 class MethodRequest(urllib2.Request):
