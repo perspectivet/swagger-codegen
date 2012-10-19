@@ -129,6 +129,7 @@ class BasicPythonGenerator extends BasicGenerator {
 
     declaredType match {
       case "Array" => declaredType = "list"
+      case "List" => declaredType = "list"
       case e: String => {
         e
       }
