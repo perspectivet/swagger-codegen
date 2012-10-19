@@ -160,6 +160,9 @@ class ApiClient:
         Returns:
             object -- deserialized object"""
 
+        if not obj:
+            return None
+            
         # Have to accept objClass as string or actual type. Type could be a
         # native Python type, or one of the model classes.
         if type(objClass) == str:
