@@ -148,7 +148,7 @@ class ApiClient:
                 objDict = obj.__dict__
             return {key: self.sanitizeForSerialization(val)
                     for (key, val) in objDict.iteritems()
-                    if key != 'swaggerTypes'}
+                    if key != 'swaggerTypes' and val != None}
 
     def deserialize(self, obj, objClass):
         """Derialize a JSON string into an object.
