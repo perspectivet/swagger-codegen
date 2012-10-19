@@ -112,15 +112,6 @@ class ApiClient:
                     for (key, val) in objDict.iteritems()
                     if key != 'swaggerTypes'}
 
-        if type(postData) == list:
-            # Could be a list of objects
-            if type(postData[0]) in safeToDump:
-                data = json.dumps(postData)
-            else:
-                data = json.dumps([datum.__dict__ for datum in postData])
-        elif type(postData) not in safeToDump:
-            data = json.dumps(postData.__dict__)
-
     def deserialize(self, obj, objClass):
         """Derialize a JSON string into an object.
 
