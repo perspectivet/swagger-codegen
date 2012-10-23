@@ -139,7 +139,7 @@ class ApiClient:
                 subClass = match.group(1)
                 return [self.deserialize(subObj, subClass) for subObj in obj]
 
-            if (objClass in ['int', 'float', 'long', 'dict', 'list', 'str']):
+            if (objClass in ['bool','int', 'float', 'long', 'dict', 'list', 'str']):
                 objClass = eval(objClass)
             else:  # not a native type, must be model class
                 objClass = eval(objClass + '.' + objClass)

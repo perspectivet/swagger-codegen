@@ -49,10 +49,10 @@ class BasicPythonGenerator extends BasicGenerator {
   // reserved words which need special quoting
   // These will all be object properties, in which context we don't need
   // to worry about escaping them for Python.
-  override def reservedWords = Set()
+  override def reservedWords: Set[String] = Set()
 
   // import/require statements for specific datatypes
-  override def importMapping = Map()
+  override def importMapping: Map[String,String] = Map()
 
 
  // response classes
@@ -96,16 +96,16 @@ class BasicPythonGenerator extends BasicGenerator {
       }
     }
   }
+
   override def typeMapping = Map(
-    "String" -> "str",
-    "Int" -> "int",
-    "Float" -> "float",
-    "Long" -> "long",
-    "Double" -> "float",
+    "string" -> "str",
+    "int" -> "int",
+    "float" -> "float",
+    "long" -> "long",
+    "double" -> "float",
     "Array" -> "list",
-    "Boolean" -> "bool",
-    "Date" -> "datetime",
-    "string" -> "str"
+    "boolean" -> "bool"
+//    "Date" -> "datetime",
   )
 
   override def toDeclaredType(dt: String): String = {
