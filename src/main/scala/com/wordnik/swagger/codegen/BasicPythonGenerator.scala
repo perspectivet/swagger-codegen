@@ -106,7 +106,7 @@ class BasicPythonGenerator extends BasicGenerator {
     "Array" -> "list",
     "array" -> "list",
     "Date" -> "datetime",
-    "date" -> "datetime"
+    "date" -> "datetime",
     "Boolean" -> "bool",
     "boolean" -> "bool"
   )
