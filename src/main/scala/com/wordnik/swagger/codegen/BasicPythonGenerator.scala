@@ -104,8 +104,11 @@ class BasicPythonGenerator extends BasicGenerator {
     "long" -> "long",
     "double" -> "float",
     "Array" -> "list",
+    "array" -> "list",
+    "Date" -> "datetime",
+    "date" -> "datetime"
+    "Boolean" -> "bool",
     "boolean" -> "bool"
-//    "Date" -> "datetime",
   )
 
   override def toDeclaredType(dt: String): String = {
