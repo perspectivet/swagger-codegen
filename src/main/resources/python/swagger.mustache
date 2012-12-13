@@ -108,9 +108,9 @@ class ApiClient:
                 objDict = obj
             else:
                 objDict = obj.__dict__
-            return {key: self.sanitizeForSerialization(val)
+            return dict([(key, self.sanitizeForSerialization(val))
                     for (key, val) in objDict.iteritems()
-                    if key != 'swaggerTypes'}
+                    if key != 'swaggerTypes'])
 
         if type(postData) == list:
             # Could be a list of objects
@@ -176,6 +176,18 @@ class ApiClient:
                             subValues.append(self.deserialize(subValue,
                                                               subClass))
                     setattr(instance, attr, subValues)
+                elif 'Map[' in attrType:
+                    match = re.match('Map\[(.*)\]', attrType)
+                    valueClass = match.group(1).split(',')[1]
+                    if attrType in ['str', 'int', 'long', 'float', 'bool']:
+                        valueClass = 'str'
+                    jsonDict = dict()
+                    if not value:
+                        setattr(instance, attr, None)
+                    else:
+                        for k,v in value.items():
+                            jsonDict[str(k)] = eval(valueClass)(v)
+                    setattr(instance, attr, jsonDict)
                 else:
                     setattr(instance, attr, self.deserialize(value,
                                                              objClass))
